@@ -19,16 +19,11 @@ COPY requirements.txt /app/
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt
 
-# Copy entrypoint script first
-COPY entrypoint.sh /app/entrypoint.sh
-# Convert line endings and make executable
-RUN sed -i 's/\r$//' /app/entrypoint.sh && chmod +x /app/entrypoint.sh
-
 # Copy project
 COPY . /app/
 
 # Expose port
 EXPOSE 8000
 
-# Set entrypoint
-ENTRYPOINT ["/bin/sh", "/app/entrypoint.sh"]
+# Default command (can be overridden by docker-compose)
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
