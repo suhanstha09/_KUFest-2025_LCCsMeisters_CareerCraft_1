@@ -10,16 +10,10 @@ import {
   Sparkles,
   Users,
   Award,
-  Clock,
+  Clock
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { ModeToggle } from "@/components/ToggleButton"
@@ -344,13 +338,7 @@ export default function Home() {
   )
 }
 
-function FeatureCard({
-  icon,
-  badge,
-  title,
-  description,
-  features,
-}: {
+function FeatureCard({ icon, badge, title, description, features }: {
   icon: React.ReactNode
   badge?: string
   title: string
@@ -376,10 +364,7 @@ function FeatureCard({
       <CardContent>
         <ul className="space-y-2">
           {features.map((feature, idx) => (
-            <li
-              key={idx}
-              className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"
-            >
+            <li key={idx} className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
               <CheckCircle2 className="h-4 w-4 text-purple-600 dark:text-purple-400 shrink-0" />
               <span>{feature}</span>
             </li>
