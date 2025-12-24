@@ -9,6 +9,8 @@ services:
       - "8000:8000"
     volumes:
       - .:/app
+      - /app/.venv
+      - /app/entrypoint.sh
       - static_volume:/app/staticfiles
     environment:
       - DEBUG=True
