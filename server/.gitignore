@@ -20,6 +20,7 @@ staticfiles/
 # **Do NOT ignore migrations** unless you know what you're doing.
 # */migrations/*.py
 # !*/migrations/__init__.py
+# merry christmas
 
 # --- Environment / secrets ---
 .env
