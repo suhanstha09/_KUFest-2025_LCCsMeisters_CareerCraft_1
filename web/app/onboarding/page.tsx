@@ -60,7 +60,7 @@ export default function Onboarding() {
       <nav className="flex items-center justify-between px-6 py-4 sm:px-12 border-b border-slate-200 dark:border-purple-500/20">
         <Link href="/" className="flex items-center gap-2">
           <Zap className="h-8 w-8 text-purple-600 dark:text-purple-400" />
-          <span className="text-2xl font-bold text-slate-900 dark:text-white">SkillSetz</span>
+          <span className="text-2xl font-bold text-slate-900 dark:text-white">CareerCraft</span>
         </Link>
         <div className="flex items-center gap-4">
           <ModeToggle />
