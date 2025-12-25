@@ -169,7 +169,7 @@ export const deleteEducation = async (id: string) => {
 
 // Work Experience APIs
 export const getWorkExperience = async () => {
-  const { data } = await axiosInstance.get("/profiles/work-experiences/");
+  const { data } = await axiosInstance.get("/profiles/work-experience/");
   return data;
 };
 
@@ -184,7 +184,7 @@ export const createWorkExperience = async (experienceData: {
   is_current: boolean;
   description?: string;
 }) => {
-  const { data } = await axiosInstance.post("/profiles/work-experiences/", experienceData);
+  const { data } = await axiosInstance.post("/profiles/work-experience/", experienceData);
   return data;
 };
 
@@ -199,12 +199,12 @@ export const updateWorkExperience = async (id: string, experienceData: Partial<{
   is_current: boolean;
   description?: string;
 }>) => {
-  const { data } = await axiosInstance.patch(`/profiles/work-experiences/${id}/`, experienceData);
+  const { data } = await axiosInstance.patch(`/profiles/work-experience/${id}/`, experienceData);
   return data;
 };
 
 export const deleteWorkExperience = async (id: string) => {
-  const { data } = await axiosInstance.delete(`/profiles/work-experiences/${id}/`);
+  const { data } = await axiosInstance.delete(`/profiles/work-experience/${id}/`);
   return data;
 };
 

@@ -477,6 +477,40 @@ export default function DreamJobStreamingPage() {
                           ))}
                         </div>
                       </div>
+
+                      <div>
+                        <label className="block text-sm font-semibold text-slate-900 dark:text-white mb-3">
+                          Target companies (Optional)
+                        </label>
+                        <input
+                          type="text"
+                          value={companies}
+                          onChange={(e) => setCompanies(e.target.value)}
+                          placeholder="e.g., Google, Microsoft, Startups..."
+                          className="w-full p-3 rounded-lg border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:border-purple-500 transition-all"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-semibold text-slate-900 dark:text-white mb-3">
+                          What type of products interest you? (Optional)
+                        </label>
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                          {PRODUCT_TYPES.map((type) => (
+                            <button
+                              key={type}
+                              onClick={() => handleProductTypeToggle(type)}
+                              className={`p-3 rounded-lg border-2 transition-all text-sm font-medium ${
+                                productTypes.includes(type)
+                                  ? "border-purple-600 bg-purple-50 dark:bg-purple-950/30 text-purple-700 dark:text-purple-300"
+                                  : "border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-600"
+                              }`}
+                            >
+                              {type}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
                     </CardContent>
                   </Card>
 
