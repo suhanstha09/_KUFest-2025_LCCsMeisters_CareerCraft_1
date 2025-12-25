@@ -12,6 +12,7 @@ import { useStreamingAnalysis } from '@/hooks/useStreamingAnalysis';
 import { StreamingMetrics } from '@/components/StreamingMetrics';
 import { AnalysisResults } from '@/components/AnalysisResults';
 import { AnalysisChat } from '@/components/AnalysisChat';
+import { RichTextEditor } from "@/components/RichTextEditor"
 
 type InputMethod = 'describe' | 'paste';
 type FollowUpStep = 'initial' | 'questions' | 'analyzing' | 'results';
@@ -19,6 +20,13 @@ type FollowUpStep = 'initial' | 'questions' | 'analyzing' | 'results';
 const INDUSTRIES = ['Tech', 'Finance', 'Healthcare', 'E-commerce', 'Education', 'Manufacturing', 'Other'];
 const LEVELS = ['Entry Level', 'Mid-level', 'Senior', 'Lead/Manager', 'Executive'];
 const PRODUCT_TYPES = ['SaaS', 'Mobile Apps', 'Web Apps', 'AI/ML', 'Data Analytics', 'Cloud Services', 'Other'];
+
+// Helper function to convert HTML to plain text
+const htmlToPlainText = (html: string): string => {
+  const div = document.createElement('div');
+  div.innerHTML = html;
+  return div.textContent || div.innerText || '';
+};
 
 // Status Step Component
 function StatusStep({ icon, text, status }: { icon: React.ReactNode; text: string; status: 'pending' | 'active' | 'complete' }) {
@@ -80,6 +88,7 @@ export default function DreamJobStreamingPage() {
 
   // Paste approach state
   const [jobPosting, setJobPosting] = useState('');
+  const [additionalContext, setAdditionalContext] = useState("")
 
   // Streaming state
   const { state, startAnalysis, cancelAnalysis } = useStreamingAnalysis();
@@ -114,6 +123,7 @@ export default function DreamJobStreamingPage() {
     setFollowUpStep('initial');
     setRoleDescription('');
     setJobPosting('');
+    setAdditionalContext("")
     setSelectedIndustry('');
     setSelectedLevel('');
     setCompanies('');
@@ -136,10 +146,12 @@ export default function DreamJobStreamingPage() {
     setFollowUpStep('analyzing');
 
     let jobDescription = '';
-    let additionalContext = '';
+    let contextData = ""
 
     if (method === 'paste') {
-      jobDescription = jobPosting;
+      // Convert HTML from rich text editor to plain text
+      jobDescription = htmlToPlainText(jobPosting)
+      contextData = additionalContext
     } else {
       jobDescription = roleDescription;
 
@@ -149,10 +161,10 @@ export default function DreamJobStreamingPage() {
       if (companies) contextParts.push(`Target Companies: ${companies}`);
       if (productTypes.length > 0) contextParts.push(`Product Types: ${productTypes.join(', ')}`);
 
-      additionalContext = contextParts.join('\n');
+      contextData = contextParts.join("\n")
     }
 
-    await startAnalysis(jobDescription, additionalContext, true);
+    await startAnalysis(jobDescription, contextData, true)
 
     // When complete, show results
     if (!state.error && state.analysisId) {
@@ -160,7 +172,7 @@ export default function DreamJobStreamingPage() {
     }
   };
 
-  const isPasteMethodComplete = jobPosting.trim().length > 0;
+  const isPasteMethodComplete = htmlToPlainText(jobPosting).trim().length > 0
   const isDescribeMethodComplete =
     followUpStep === 'questions' &&
     selectedIndustry &&
@@ -200,14 +212,16 @@ export default function DreamJobStreamingPage() {
             Step 2: Define Your Dream Job (Streaming)
           </Badge> */}
           <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-3">
-          Watch as our team conducts real-time  analysis with evolving metrics to assess your fit.
+            Watch as our team conducts real-time analysis with evolving metrics
+            to assess your fit.
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400">
-            Watch real-time AI analysis with progressive metrics as we evaluate your fit.
+            Watch real-time AI analysis with progressive metrics as we evaluate
+            your fit.
           </p>
         </div>
 
-        {followUpStep === 'analyzing' ? (
+        {followUpStep === "analyzing" ? (
           // Analyzing & Results View
           <div className="space-y-6">
             {/* Progress Card */}
@@ -216,7 +230,9 @@ export default function DreamJobStreamingPage() {
                 <div className="flex items-center justify-between">
                   <CardTitle className="flex items-center gap-2">
                     <Sparkles className="h-5 w-5 text-purple-600" />
-                    {state.progress === 100 ? 'Analysis Complete!' : 'Analyzing Your Fit'}
+                    {state.progress === 100
+                      ? "Analysis Complete!"
+                      : "Analyzing Your Fit"}
                   </CardTitle>
                   <Badge className="bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">
                     {state.progress}%
@@ -242,22 +258,22 @@ export default function DreamJobStreamingPage() {
                   <StatusStep
                     icon={<Briefcase className="h-4 w-4" />}
                     text="Parsing job description"
-                    status={getStepStatus('parsing')}
+                    status={getStepStatus("parsing")}
                   />
                   <StatusStep
                     icon={<Target className="h-4 w-4" />}
                     text="Gathering your profile data"
-                    status={getStepStatus('gathering_context')}
+                    status={getStepStatus("gathering_context")}
                   />
                   <StatusStep
                     icon={<TrendingUp className="h-4 w-4" />}
                     text="Analyzing your fit"
-                    status={getStepStatus('analyzing')}
+                    status={getStepStatus("analyzing")}
                   />
                   <StatusStep
                     icon={<Lightbulb className="h-4 w-4" />}
                     text="Calculating match scores"
-                    status={getStepStatus('processing')}
+                    status={getStepStatus("processing")}
                   />
                 </div>
               </CardContent>
@@ -276,7 +292,10 @@ export default function DreamJobStreamingPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <StreamingMetrics metrics={state.metrics} isStreaming={state.isStreaming} />
+                  <StreamingMetrics
+                    metrics={state.metrics}
+                    isStreaming={state.isStreaming}
+                  />
                 </CardContent>
               </Card>
             )}
@@ -286,8 +305,12 @@ export default function DreamJobStreamingPage() {
               <div className="bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/30 rounded-lg p-4 flex gap-3">
                 <AlertCircle className="h-5 w-5 text-red-600 dark:text-red-400 shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-medium text-red-700 dark:text-red-300">Analysis Failed</p>
-                  <p className="text-sm text-red-600 dark:text-red-400">{state.error}</p>
+                  <p className="font-medium text-red-700 dark:text-red-300">
+                    Analysis Failed
+                  </p>
+                  <p className="text-sm text-red-600 dark:text-red-400">
+                    {state.error}
+                  </p>
                 </div>
               </div>
             )}
@@ -318,10 +341,7 @@ export default function DreamJobStreamingPage() {
             {state.progress === 100 && analysisData && showChat && (
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
-                  <Button
-                    onClick={() => setShowChat(false)}
-                    variant="outline"
-                  >
+                  <Button onClick={() => setShowChat(false)} variant="outline">
                     <ArrowLeft className="h-4 w-4 mr-2" />
                     Back to Results
                   </Button>
@@ -336,43 +356,51 @@ export default function DreamJobStreamingPage() {
             {/* Method Selection Tabs */}
             <div className="flex gap-3 mb-8">
               <button
-                onClick={() => handleMethodChange('describe')}
+                onClick={() => handleMethodChange("describe")}
                 className={`flex-1 p-4 rounded-lg border-2 transition-all ${
-                  method === 'describe'
-                    ? 'border-purple-600 bg-purple-50 dark:bg-purple-950/30'
-                    : 'border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
+                  method === "describe"
+                    ? "border-purple-600 bg-purple-50 dark:bg-purple-950/30"
+                    : "border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700"
                 }`}
               >
                 <div className="flex items-center gap-3 justify-center">
                   <Briefcase className="h-5 w-5" />
                   <div className="text-left">
-                    <p className="font-semibold text-slate-900 dark:text-white">Describe Your Dream Role</p>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">Tell us about your ideal position</p>
+                    <p className="font-semibold text-slate-900 dark:text-white">
+                      Describe Your Dream Role
+                    </p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      Tell us about your ideal position
+                    </p>
                   </div>
                 </div>
               </button>
 
               <button
-                onClick={() => handleMethodChange('paste')}
+                onClick={() => handleMethodChange("paste")}
                 className={`flex-1 p-4 rounded-lg border-2 transition-all ${
-                  method === 'paste'
-                    ? 'border-purple-600 bg-purple-50 dark:bg-purple-950/30'
-                    : 'border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
+                  method === "paste"
+                    ? "border-purple-600 bg-purple-50 dark:bg-purple-950/30"
+                    : "border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700"
                 }`}
               >
                 <div className="flex items-center gap-3 justify-center">
                   <BookOpen className="h-5 w-5" />
                   <div className="text-left">
-                    <p className="font-semibold text-slate-900 dark:text-white">Paste Job Posting</p>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">Copy from LinkedIn or Indeed</p>
+                    <p className="font-semibold text-slate-900 dark:text-white">
+                      Paste Job Posting
+                    </p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      Copy from LinkedIn or Indeed
+                    </p>
                   </div>
                 </div>
               </button>
             </div>
 
             {/* Form content - reuse from original page */}
-            {method === 'describe' ? (
-              followUpStep === 'initial' ? (
+            {method === "describe" ? (
+              followUpStep === "initial" ? (
                 <Card className="border-purple-100 dark:border-purple-900/50">
                   <CardHeader>
                     <CardTitle>Your Ideal Role</CardTitle>
@@ -402,7 +430,8 @@ export default function DreamJobStreamingPage() {
                     <CardHeader>
                       <CardTitle>Let's refine your search</CardTitle>
                       <CardDescription>
-                        Answer a few questions to help us better understand your target role
+                        Answer a few questions to help us better understand your
+                        target role
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-6">
@@ -418,8 +447,8 @@ export default function DreamJobStreamingPage() {
                               onClick={() => setSelectedIndustry(industry)}
                               className={`p-3 rounded-lg border-2 transition-all text-sm font-medium ${
                                 selectedIndustry === industry
-                                  ? 'border-purple-600 bg-purple-50 dark:bg-purple-950/30 text-purple-700 dark:text-purple-300'
-                                  : 'border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-600'
+                                  ? "border-purple-600 bg-purple-50 dark:bg-purple-950/30 text-purple-700 dark:text-purple-300"
+                                  : "border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-600"
                               }`}
                             >
                               {industry}
@@ -439,8 +468,8 @@ export default function DreamJobStreamingPage() {
                               onClick={() => setSelectedLevel(level)}
                               className={`w-full p-3 rounded-lg border-2 transition-all text-left font-medium ${
                                 selectedLevel === level
-                                  ? 'border-purple-600 bg-purple-50 dark:bg-purple-950/30 text-purple-700 dark:text-purple-300'
-                                  : 'border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-600'
+                                  ? "border-purple-600 bg-purple-50 dark:bg-purple-950/30 text-purple-700 dark:text-purple-300"
+                                  : "border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-600"
                               }`}
                             >
                               {level}
@@ -463,36 +492,60 @@ export default function DreamJobStreamingPage() {
                 </div>
               )
             ) : (
-              <Card className="border-purple-100 dark:border-purple-900/50">
-                <CardHeader>
-                  <CardTitle>Paste Job Description</CardTitle>
-                  <CardDescription>
-                    Copy a job posting from LinkedIn, Indeed, or any job board
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <textarea
-                    value={jobPosting}
-                    onChange={(e) => setJobPosting(e.target.value)}
-                    placeholder="Paste the complete job description here..."
-                    className="w-full p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none min-h-64"
-                  />
+              <div className="space-y-6">
+                <Card className="border-purple-100 dark:border-purple-900/50">
+                  <CardHeader>
+                    <CardTitle>Paste Job Description</CardTitle>
+                    <CardDescription>
+                      Copy a job posting from LinkedIn, Indeed, or any job
+                      board. You can format the text using bold and italic.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-semibold text-slate-900 dark:text-white mb-2">
+                        Job Description *
+                      </label>
+                      <RichTextEditor
+                        value={jobPosting}
+                        onChange={setJobPosting}
+                        placeholder="Paste the complete job description here... You can use formatting for emphasis."
+                        minHeight="16rem"
+                      />
+                    </div>
 
-                  <Button
-                    onClick={handleAnalyze}
-                    disabled={!isPasteMethodComplete}
-                    size="lg"
-                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg h-12"
-                  >
-                    <Sparkles className="h-5 w-5 mr-2" />
-                    Start Streaming Analysis
-                  </Button>
-                </CardContent>
-              </Card>
+                    <div>
+                      <label className="block text-sm font-semibold text-slate-900 dark:text-white mb-2">
+                        Tell us About Your Preferences (Optional)
+                      </label>
+                      <textarea
+                        value={additionalContext}
+                        onChange={(e) => setAdditionalContext(e.target.value)}
+                        placeholder="Add any preferences or context (e.g., remote work preference, salary expectations, specific skills you want to highlight...)"
+                        className="w-full p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none min-h-32"
+                      />
+                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">
+                        This helps us better understand your preferences and
+                        provide more personalized analysis.
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Button
+                  onClick={handleAnalyze}
+                  disabled={!isPasteMethodComplete}
+                  size="lg"
+                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg h-12"
+                >
+                  <Sparkles className="h-5 w-5 mr-2" />
+                  Start Streaming Analysis
+                </Button>
+              </div>
             )}
           </>
         )}
       </div>
     </div>
-  );
+  )
 }
