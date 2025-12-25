@@ -2,9 +2,10 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Zap, Upload, FileText, CheckCircle, AlertCircle } from 'lucide-react';
+import { Upload, FileText, CheckCircle, AlertCircle } from 'lucide-react';
 import { ModeToggle } from '@/components/ToggleButton';
 import { ProfileMenu } from '@/components/ProfileMenu';
 import { uploadResumeOnboard } from '@/api';
@@ -59,10 +60,14 @@ export default function Onboarding() {
       {/* Navigation */}
       <nav className="flex items-center justify-between px-6 py-4 sm:px-12 border-b border-slate-200 dark:border-purple-500/20">
         <Link href="/" className="flex items-center gap-2">
-          <Zap className="h-8 w-8 text-purple-600 dark:text-purple-400" />
-          <span className="text-2xl font-bold text-slate-900 dark:text-white">
+  <Image
+            src="/logo.png"
+            alt="CareerCraft Logo"
+            width={102}
+            height={102}
+          />          {/* <span className="text-2xl font-bold text-slate-900 dark:text-white">
             CareerCraft
-          </span>
+          </span> */}
         </Link>
         <div className="flex items-center gap-4">
           <ModeToggle />

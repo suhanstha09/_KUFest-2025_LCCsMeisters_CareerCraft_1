@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import {
-  Zap,
   Menu,
   X,
   BarChart3,
@@ -50,10 +50,14 @@ export default function DashboardLayout({
               )}
             </button>
             <Link href="/" className="flex items-center gap-2">
-              <Zap className="h-8 w-8 text-purple-400" />
-              <span className="text-xl font-bold text-slate-900 dark:text-white">
+  <Image
+            src="/logo.png"
+            alt="CareerCraft Logo"
+            width={102}
+            height={102}
+          />              {/* <span className="text-xl font-bold text-slate-900 dark:text-white">
                 CareerCraft
-              </span>
+              </span> */}
             </Link>
           </div>
 

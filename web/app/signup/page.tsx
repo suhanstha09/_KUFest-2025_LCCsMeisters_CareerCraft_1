@@ -2,9 +2,10 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Zap, Mail, Lock, User, ArrowRight, AlertCircle, Loader2, Eye, EyeOff } from 'lucide-react';
+import { Mail, Lock, User, ArrowRight, AlertCircle, Loader2, Eye, EyeOff } from 'lucide-react';
 import { ModeToggle } from '@/components/ToggleButton';
 import { useSignup } from '@/hooks/useAuth';
 import { getErrorMessage } from '@/features/auth/lib/utils';
@@ -69,8 +70,12 @@ export default function SignUp() {
       {/* Navigation */}
       <nav className="flex items-center justify-between px-6 py-4 sm:px-12 bg-white/5 dark:bg-slate-900/50 backdrop-blur-sm border-b border-white/10">
         <Link href="/" className="flex items-center gap-2">
-          <Zap className="h-8 w-8 text-purple-400" />
-          <span className="text-2xl font-bold text-white">CareerCraft </span>
+  <Image
+            src="/logo.png"
+            alt="CareerCraft Logo"
+            width={102}
+            height={102}
+          />          {/* <span className="text-2xl font-bold text-white">CareerCraft </span> */}
         </Link>
         <div className="flex gap-4 items-center">
           <ModeToggle />

@@ -12,6 +12,7 @@ import {
   Award,
   Clock
 } from "lucide-react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -24,16 +25,19 @@ export default function Home() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 sm:px-12 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
         <div className="flex items-center gap-2">
-          <div className="relative">
+          {/* <div className="relative">
             <Target
               className="h-8 w-8 text-purple-600 dark:text-purple-400"
               fill="currentColor"
             />
             <div className="absolute inset-0 blur-lg bg-purple-600/20 dark:bg-purple-400/20"></div>
-          </div>
-          <span className="text-2xl font-bold bg-linear-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
-            CareerCraft
-          </span>
+          </div> */}
+          <Image
+            src="/logo.png"
+            alt="CareerCraft Logo"
+            width={102}
+            height={102}
+          />
         </div>
         <div className="flex gap-3 items-center">
           <ModeToggle />
