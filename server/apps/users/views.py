@@ -15,6 +15,7 @@ from .models import UserPreference
 from .serializers import (
     UserSerializer,
     UserRegistrationSerializer,
+    UserRegistrationResponseSerializer,
     UserUpdateSerializer,
     ChangePasswordSerializer,
     UserPreferenceSerializer,
@@ -41,10 +42,10 @@ class CustomTokenObtainPairView(TokenObtainPairView):
 @extend_schema(
     tags=['Authentication'],
     summary='Register a new user',
-    description='Create a new user account with email, username, and password',
+    description='Create a new user account with email, username, and password. Does NOT return authentication tokens - user must login separately.',
     request=UserRegistrationSerializer,
     responses={
-        201: UserSerializer,
+        201: UserRegistrationResponseSerializer,
         400: OpenApiTypes.OBJECT,
     },
     examples=[
@@ -76,10 +77,21 @@ class UserRegistrationView(generics.CreateAPIView):
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
 
+        # Use explicit response serializer (no tokens, no nested relations)
+        user_data = UserRegistrationResponseSerializer({
+            'id': user.id,
+            'username': user.username,
+            'email': user.email,
+            'first_name': user.first_name,
+            'last_name': user.last_name,
+            'profile_completed': user.profile_completed,
+            'profile_completion_percentage': user.profile_completion_percentage,
+        }).data
+
         return Response(
             {
-                "user": UserSerializer(user).data,
-                "message": "User registered successfully. Please verify your email.",
+                "user": user_data,
+                "message": "User registered successfully. Please login to continue.",
             },
             status=status.HTTP_201_CREATED,
         )

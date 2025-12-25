@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Cookies from 'js-cookie';
 import { Button } from '@/components/ui/button';
 import { Zap, Mail, Lock, ArrowRight, AlertCircle, Loader2 } from 'lucide-react';
@@ -12,12 +12,23 @@ import { getErrorMessage } from '@/features/auth/lib/utils';
 
 export default function Login() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const [showRegisteredMessage, setShowRegisteredMessage] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
 
   const { mutate: login, isPending, isError, error } = useLogin();
+
+  useEffect(() => {
+    if (searchParams.get('registered') === 'true') {
+      setShowRegisteredMessage(true);
+      // Hide message after 5 seconds
+      const timer = setTimeout(() => setShowRegisteredMessage(false), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [searchParams]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -77,6 +88,16 @@ export default function Login() {
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Success Message */}
+              {showRegisteredMessage && (
+                <div className="bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800 rounded-lg p-4 flex items-start gap-3">
+                  <AlertCircle className="h-5 w-5 text-green-600 dark:text-green-400 shrink-0 mt-0.5" />
+                  <p className="text-sm text-green-800 dark:text-green-300">
+                    Registration successful! Please login with your credentials.
+                  </p>
+                </div>
+              )}
+
               {/* Error Message */}
               {isError && error && (
                 <div className="bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 rounded-lg p-4 flex items-start gap-3">

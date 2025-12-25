@@ -36,9 +36,12 @@ export const useSignup = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (userData: {
+      username: string;
       email: string;
       password: string;
-      username?: string;
+      password_confirm: string;
+      first_name: string;
+      last_name: string;
     }) => signupUser(userData),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["currentUser"] });

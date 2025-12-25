@@ -182,6 +182,16 @@ export default function Onboarding() {
                   </>
                 )}
               </Button>
+
+              {/* Skip Button */}
+              <Button
+                onClick={() => router.push('/dashboard')}
+                disabled={isUploading || uploadSuccess}
+                variant="outline"
+                className="w-full border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800"
+              >
+                Skip for Now
+              </Button>
             </div>
           </div>
         </div>

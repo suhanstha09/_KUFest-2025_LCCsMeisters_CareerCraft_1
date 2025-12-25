@@ -7,11 +7,14 @@ export const loginUser = async (email: string, password: string) => {
 };
 
 export const signupUser = async (userData: {
+  username: string;
   email: string;
   password: string;
-  username?: string;
+  password_confirm: string;
+  first_name: string;
+  last_name: string;
 }) => {
-  const { data } = await axiosInstance.post("/auth/signup/", userData);
+  const { data } = await axiosInstance.post("/users/auth/register/", userData);
   return data;
 };
 
@@ -75,14 +78,20 @@ export const updateRoadmapProgress = async (weekId: string) => {
   return data;
 };
 
-// Profile APIs
+// User Profile APIs (for basic user info)
 export const getUserProfile = async () => {
-  const { data } = await axiosInstance.get("/profile/");
+  const { data } = await axiosInstance.get("/users/profile/");
   return data;
 };
 
-export const updateUserProfile = async (profileData: Record<string, any>) => {
-  const { data } = await axiosInstance.patch("/profile/", profileData);
+export const updateUserProfile = async (profileData: {
+  username?: string;
+  first_name?: string;
+  last_name?: string;
+  phone_number?: string;
+  date_of_birth?: string;
+}) => {
+  const { data } = await axiosInstance.patch("/users/profile/", profileData);
   return data;
 };
 
@@ -114,5 +123,167 @@ export const analyzeDreamJob = async (jobData: {
   const { data } = await axiosInstance.post("/jobs/analyses/analyze_dream_job/", jobData, {
     timeout: 300000, // 5 minutes
   });
+  return data;
+};
+
+// Education APIs
+export const getEducation = async () => {
+  const { data } = await axiosInstance.get("/profiles/education/");
+  return data;
+};
+
+export const createEducation = async (educationData: {
+  institution: string;
+  degree: string;
+  degree_level: string;
+  field_of_study?: string;
+  start_date: string;
+  end_date?: string;
+  is_current: boolean;
+  grade?: string;
+  description?: string;
+}) => {
+  const { data } = await axiosInstance.post("/profiles/education/", educationData);
+  return data;
+};
+
+export const updateEducation = async (id: string, educationData: Partial<{
+  institution: string;
+  degree: string;
+  degree_level: string;
+  field_of_study?: string;
+  start_date: string;
+  end_date?: string;
+  is_current: boolean;
+  grade?: string;
+  description?: string;
+}>) => {
+  const { data } = await axiosInstance.patch(`/profiles/education/${id}/`, educationData);
+  return data;
+};
+
+export const deleteEducation = async (id: string) => {
+  const { data } = await axiosInstance.delete(`/profiles/education/${id}/`);
+  return data;
+};
+
+// Work Experience APIs
+export const getWorkExperience = async () => {
+  const { data } = await axiosInstance.get("/profiles/work-experiences/");
+  return data;
+};
+
+export const createWorkExperience = async (experienceData: {
+  job_title: string;
+  company: string;
+  employment_type: string;
+  location?: string;
+  is_remote: boolean;
+  start_date: string;
+  end_date?: string;
+  is_current: boolean;
+  description?: string;
+}) => {
+  const { data } = await axiosInstance.post("/profiles/work-experiences/", experienceData);
+  return data;
+};
+
+export const updateWorkExperience = async (id: string, experienceData: Partial<{
+  job_title: string;
+  company: string;
+  employment_type: string;
+  location?: string;
+  is_remote: boolean;
+  start_date: string;
+  end_date?: string;
+  is_current: boolean;
+  description?: string;
+}>) => {
+  const { data } = await axiosInstance.patch(`/profiles/work-experiences/${id}/`, experienceData);
+  return data;
+};
+
+export const deleteWorkExperience = async (id: string) => {
+  const { data } = await axiosInstance.delete(`/profiles/work-experiences/${id}/`);
+  return data;
+};
+
+// Projects APIs
+export const getProjects = async () => {
+  const { data } = await axiosInstance.get("/profiles/projects/");
+  return data;
+};
+
+export const createProject = async (projectData: {
+  title: string;
+  project_type: string;
+  description?: string;
+  technologies_used?: string[];
+  project_url?: string;
+  github_url?: string;
+  demo_url?: string;
+  start_date: string;
+  end_date?: string;
+  is_ongoing: boolean;
+}) => {
+  const { data } = await axiosInstance.post("/profiles/projects/", projectData);
+  return data;
+};
+
+export const updateProject = async (id: string, projectData: Partial<{
+  title: string;
+  project_type: string;
+  description?: string;
+  technologies_used?: string[];
+  project_url?: string;
+  github_url?: string;
+  demo_url?: string;
+  start_date: string;
+  end_date?: string;
+  is_ongoing: boolean;
+}>) => {
+  const { data } = await axiosInstance.patch(`/profiles/projects/${id}/`, projectData);
+  return data;
+};
+
+export const deleteProject = async (id: string) => {
+  const { data } = await axiosInstance.delete(`/profiles/projects/${id}/`);
+  return data;
+};
+
+// Certifications APIs
+export const getCertifications = async () => {
+  const { data } = await axiosInstance.get("/profiles/certifications/");
+  return data;
+};
+
+export const createCertification = async (certificationData: {
+  name: string;
+  issuing_organization: string;
+  credential_id?: string;
+  credential_url?: string;
+  issue_date: string;
+  expiry_date?: string;
+  does_not_expire: boolean;
+}) => {
+  const { data } = await axiosInstance.post("/profiles/certifications/", certificationData);
+  return data;
+};
+
+export const updateCertification = async (id: string, certificationData: Partial<{
+  name: string;
+  issuing_organization: string;
+  credential_id?: string;
+  credential_url?: string;
+  issue_date: string;
+  expiry_date?: string;
+  does_not_expire: boolean;
+}>) => {
+  const { data } = await axiosInstance.patch(`/profiles/certifications/${id}/`, certificationData);
+  return data;
+};
+
+export const deleteCertification = async (id: string) => {
+  const { data } = await axiosInstance.delete(`/profiles/certifications/${id}/`);
   return data;
 };

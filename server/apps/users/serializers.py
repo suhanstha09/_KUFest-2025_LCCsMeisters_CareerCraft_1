@@ -126,6 +126,19 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         return user
 
 
+class UserRegistrationResponseSerializer(serializers.Serializer):
+    """
+    Explicit serializer for registration response (no tokens)
+    """
+    id = serializers.IntegerField()
+    username = serializers.CharField()
+    email = serializers.EmailField()
+    first_name = serializers.CharField()
+    last_name = serializers.CharField()
+    profile_completed = serializers.BooleanField()
+    profile_completion_percentage = serializers.IntegerField()
+
+
 class UserUpdateSerializer(serializers.ModelSerializer):
     """
     Serializer for updating user profile

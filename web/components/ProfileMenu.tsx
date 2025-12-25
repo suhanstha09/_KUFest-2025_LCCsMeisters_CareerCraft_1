@@ -10,7 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { User, LogOut, FileText, ChevronDown } from 'lucide-react';
+import { User, LogOut, FileText, ChevronDown, Settings } from 'lucide-react';
 import { useLogout } from '@/hooks/useAuth';
 
 interface ProfileMenuProps {
@@ -43,6 +43,10 @@ export function ProfileMenu({ userName = 'John Doe', userEmail = 'john@example.c
 
   const handleCompleteOnboarding = () => {
     router.push('/onboarding');
+  };
+
+  const handleSettings = () => {
+    router.push('/dashboard/settings');
   };
 
   return (
@@ -79,6 +83,11 @@ export function ProfileMenu({ userName = 'John Doe', userEmail = 'john@example.c
         <DropdownMenuItem onClick={handleCompleteOnboarding} className="cursor-pointer">
           <FileText className="mr-2 h-4 w-4" />
           <span>Complete Onboarding</span>
+        </DropdownMenuItem>
+
+        <DropdownMenuItem onClick={handleSettings} className="cursor-pointer">
+          <Settings className="mr-2 h-4 w-4" />
+          <span>Settings</span>
         </DropdownMenuItem>
 
         <DropdownMenuSeparator />
