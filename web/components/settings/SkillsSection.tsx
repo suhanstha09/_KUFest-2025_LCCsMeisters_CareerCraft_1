@@ -38,7 +38,7 @@ export function SkillsSection() {
   const proficiencyLevels = [
     { value: 'BEGINNER', label: 'Beginner', color: 'bg-slate-500' },
     { value: 'INTERMEDIATE', label: 'Intermediate', color: 'bg-blue-500' },
-    { value: 'ADVANCED', label: 'Advanced', color: 'bg-purple-500' },
+    { value: 'ADVANCED', label: 'Advanced', color: 'bg-blue-500' },
     { value: 'EXPERT', label: 'Expert', color: 'bg-green-500' },
   ];
 
@@ -106,7 +106,7 @@ export function SkillsSection() {
         {!isAdding && (
           <Button
             onClick={handleAdd}
-            className="bg-purple-600 hover:bg-purple-700 text-white"
+            className="bg-blue-600 hover:bg-blue-700 text-white"
           >
             <Plus className="mr-2 h-4 w-4" />
             Add Skill
@@ -140,7 +140,7 @@ export function SkillsSection() {
                   id="skillType"
                   value={formData.skillType}
                   onChange={(e) => handleChange('skillType', e.target.value)}
-                  className="flex h-10 w-full rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-2 text-sm ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 dark:focus-visible:ring-purple-400 focus-visible:ring-offset-2 text-slate-900 dark:text-slate-50"
+                  className="flex h-10 w-full rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-2 text-sm ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-blue-400 focus-visible:ring-offset-2 text-slate-900 dark:text-slate-50"
                 >
                   {skillTypes.map(type => (
                     <option key={type.value} value={type.value}>
@@ -156,7 +156,7 @@ export function SkillsSection() {
                   id="proficiencyLevel"
                   value={formData.proficiencyLevel}
                   onChange={(e) => handleChange('proficiencyLevel', e.target.value)}
-                  className="flex h-10 w-full rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-2 text-sm ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 dark:focus-visible:ring-purple-400 focus-visible:ring-offset-2 text-slate-900 dark:text-slate-50"
+                  className="flex h-10 w-full rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-2 text-sm ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-blue-400 focus-visible:ring-offset-2 text-slate-900 dark:text-slate-50"
                 >
                   {proficiencyLevels.map(level => (
                     <option key={level.value} value={level.value}>
@@ -182,7 +182,7 @@ export function SkillsSection() {
             <div className="flex gap-3 pt-4 border-t border-slate-200 dark:border-slate-800">
               <Button
                 onClick={handleSave}
-                className="bg-purple-600 hover:bg-purple-700 text-white"
+                className="bg-blue-600 hover:bg-blue-700 text-white"
               >
                 <Save className="mr-2 h-4 w-4" />
                 {editingId ? 'Update' : 'Save'}
@@ -282,3 +282,4 @@ export function SkillsSection() {
     </div>
   );
 }
+

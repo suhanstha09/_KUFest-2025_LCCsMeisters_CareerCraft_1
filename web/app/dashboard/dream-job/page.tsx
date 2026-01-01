@@ -23,14 +23,14 @@ function AnalyzingStep({ icon, text, delay }: { icon: React.ReactNode; text: str
       className="flex items-center gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 opacity-0 animate-fade-in"
       style={{ animationDelay: `${delay}ms` }}
     >
-      <div className="flex items-center justify-center w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">
+      <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
         {icon}
       </div>
       <span className="text-sm text-slate-700 dark:text-slate-300 font-medium">{text}</span>
       <div className="ml-auto flex gap-1">
-        <div className="w-1.5 h-1.5 bg-purple-600 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-        <div className="w-1.5 h-1.5 bg-purple-600 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-        <div className="w-1.5 h-1.5 bg-purple-600 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
       </div>
     </div>
   );
@@ -146,7 +146,7 @@ export default function DreamJobPage() {
       <div className="max-w-4xl mx-auto">
         {/* Title Section */}
         <div className="mb-8">
-          <Badge className="mb-4 bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800">
+          <Badge className="mb-4 bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800">
             <Target className="h-3 w-3 mr-1" />
             Step 2: Define Your Dream Job
           </Badge>
@@ -164,7 +164,7 @@ export default function DreamJobPage() {
             onClick={() => handleMethodChange('describe')}
             className={`flex-1 p-4 rounded-lg border-2 transition-all ${
               method === 'describe'
-                ? 'border-purple-600 bg-purple-50 dark:bg-purple-950/30'
+                ? 'border-blue-600 bg-blue-50 dark:bg-blue-950/30'
                 : 'border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
             }`}
           >
@@ -181,7 +181,7 @@ export default function DreamJobPage() {
             onClick={() => handleMethodChange('paste')}
             className={`flex-1 p-4 rounded-lg border-2 transition-all ${
               method === 'paste'
-                ? 'border-purple-600 bg-purple-50 dark:bg-purple-950/30'
+                ? 'border-blue-600 bg-blue-50 dark:bg-blue-950/30'
                 : 'border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
             }`}
           >
@@ -200,7 +200,7 @@ export default function DreamJobPage() {
           // Describe Method
           <div className="space-y-6">
             {followUpStep === 'initial' ? (
-              <Card className="border-purple-100 dark:border-purple-900/50">
+              <Card className="border-blue-100 dark:border-blue-900/50">
                 <CardHeader>
                   <CardTitle>Your Ideal Role</CardTitle>
                   <CardDescription>
@@ -212,12 +212,12 @@ export default function DreamJobPage() {
                     value={roleDescription}
                     onChange={(e) => setRoleDescription(e.target.value)}
                     placeholder="I want to be a Product Manager at a tech startup..."
-                    className="w-full p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none min-h-32"
+                    className="w-full p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none min-h-32"
                   />
                   <Button
                     onClick={handleDescribeSubmit}
                     disabled={!roleDescription.trim()}
-                    className="w-full bg-purple-600 hover:bg-purple-700"
+                    className="w-full bg-blue-600 hover:bg-blue-700"
                   >
                     Continue <Sparkles className="ml-2 h-4 w-4" />
                   </Button>
@@ -225,20 +225,20 @@ export default function DreamJobPage() {
               </Card>
             ) : followUpStep === 'analyzing' ? (
               <div className="space-y-6">
-                <Card className="border-purple-100 dark:border-purple-900/50 overflow-hidden">
+                <Card className="border-blue-100 dark:border-blue-900/50 overflow-hidden">
                   <CardContent className="pt-6">
                     <div className="flex flex-col items-center justify-center py-16 gap-6">
                       {/* Animated Icon */}
                       <div className="relative">
                         {/* Outer rotating ring */}
                         <div className="absolute inset-0 w-32 h-32 -m-8">
-                          <div className="w-full h-full rounded-full border-4 border-transparent border-t-purple-600 border-r-pink-600 animate-spin"></div>
+                          <div className="w-full h-full rounded-full border-4 border-transparent border-t-blue-600 border-r-orange-600 animate-spin"></div>
                         </div>
                         {/* Middle pulsing glow */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full blur-2xl opacity-40 animate-pulse"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-orange-600 rounded-full blur-2xl opacity-40 animate-pulse"></div>
                         {/* Inner icon */}
                         <div className="relative bg-white dark:bg-slate-900 rounded-full p-6 shadow-xl">
-                          <Sparkles className="h-12 w-12 text-purple-600 dark:text-purple-400 animate-pulse" />
+                          <Sparkles className="h-12 w-12 text-blue-600 dark:text-blue-400 animate-pulse" />
                         </div>
                       </div>
 
@@ -279,7 +279,7 @@ export default function DreamJobPage() {
                       {/* Loading Bar */}
                       <div className="w-full max-w-md mt-6">
                         <div className="h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-                          <div className="h-full bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 animate-loading-bar"></div>
+                          <div className="h-full bg-gradient-to-r from-blue-600 via-orange-600 to-blue-600 animate-loading-bar"></div>
                         </div>
                       </div>
 
@@ -294,7 +294,7 @@ export default function DreamJobPage() {
             ) : (
               // Questions step
               <div className="space-y-6">
-                <Card className="border-purple-100 dark:border-purple-900/50">
+                <Card className="border-blue-100 dark:border-blue-900/50">
                   <CardHeader>
                     <CardTitle>Let's refine your search</CardTitle>
                     <CardDescription>
@@ -314,7 +314,7 @@ export default function DreamJobPage() {
                             onClick={() => setSelectedIndustry(industry)}
                             className={`p-3 rounded-lg border-2 transition-all text-sm font-medium ${
                               selectedIndustry === industry
-                                ? 'border-purple-600 bg-purple-50 dark:bg-purple-950/30 text-purple-700 dark:text-purple-300'
+                                ? 'border-blue-600 bg-blue-50 dark:bg-blue-950/30 text-blue-700 dark:text-blue-300'
                                 : 'border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-600'
                             }`}
                           >
@@ -336,7 +336,7 @@ export default function DreamJobPage() {
                             onClick={() => setSelectedLevel(level)}
                             className={`w-full p-3 rounded-lg border-2 transition-all text-left font-medium ${
                               selectedLevel === level
-                                ? 'border-purple-600 bg-purple-50 dark:bg-purple-950/30 text-purple-700 dark:text-purple-300'
+                                ? 'border-blue-600 bg-blue-50 dark:bg-blue-950/30 text-blue-700 dark:text-blue-300'
                                 : 'border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-600'
                             }`}
                           >
@@ -356,7 +356,7 @@ export default function DreamJobPage() {
                         value={companies}
                         onChange={(e) => setCompanies(e.target.value)}
                         placeholder="e.g., Google, Microsoft, Startup XYZ"
-                        className="w-full p-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="w-full p-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       />
                     </div>
 
@@ -372,7 +372,7 @@ export default function DreamJobPage() {
                             onClick={() => handleProductTypeToggle(type)}
                             className={`p-3 rounded-lg border-2 transition-all text-sm font-medium ${
                               productTypes.includes(type)
-                                ? 'border-purple-600 bg-purple-50 dark:bg-purple-950/30 text-purple-700 dark:text-purple-300'
+                                ? 'border-blue-600 bg-blue-50 dark:bg-blue-950/30 text-blue-700 dark:text-blue-300'
                                 : 'border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-600'
                             }`}
                           >
@@ -388,7 +388,7 @@ export default function DreamJobPage() {
                 <Card className="border-slate-200 dark:border-slate-700 bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <Target className="h-5 w-5 text-purple-600" />
+                      <Target className="h-5 w-5 text-blue-600" />
                       Your Target Role Profile
                     </CardTitle>
                   </CardHeader>
@@ -420,7 +420,7 @@ export default function DreamJobPage() {
                         <p className="text-xs text-slate-600 dark:text-slate-400 uppercase font-semibold">Product Types</p>
                         <div className="flex flex-wrap gap-2 mt-2">
                           {productTypes.map((type) => (
-                            <Badge key={type} className="bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">
+                            <Badge key={type} className="bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">
                               {type}
                             </Badge>
                           ))}
@@ -445,7 +445,7 @@ export default function DreamJobPage() {
                   onClick={handleAnalyze}
                   disabled={!isDescribeMethodComplete || isAnalyzing}
                   size="lg"
-                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg h-12"
+                  className="w-full bg-gradient-to-r from-blue-600 to-orange-600 hover:from-blue-700 hover:to-orange-700 text-white shadow-lg h-12"
                 >
                   {isAnalyzing ? (
                     <>
@@ -464,7 +464,7 @@ export default function DreamJobPage() {
           </div>
         ) : (
           // Paste Method
-          <Card className="border-purple-100 dark:border-purple-900/50">
+          <Card className="border-blue-100 dark:border-blue-900/50">
             <CardHeader>
               <CardTitle>Paste Job Description</CardTitle>
               <CardDescription>
@@ -476,7 +476,7 @@ export default function DreamJobPage() {
                 value={jobPosting}
                 onChange={(e) => setJobPosting(e.target.value)}
                 placeholder="Paste the complete job description here..."
-                className="w-full p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none min-h-64"
+                className="w-full p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none min-h-64"
               />
 
               <div className="bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-900/50 rounded-lg p-4">
@@ -500,7 +500,7 @@ export default function DreamJobPage() {
                 onClick={handleAnalyze}
                 disabled={!isPasteMethodComplete || isAnalyzing}
                 size="lg"
-                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg h-12"
+                className="w-full bg-gradient-to-r from-blue-600 to-orange-600 hover:from-blue-700 hover:to-orange-700 text-white shadow-lg h-12"
               >
                 {isAnalyzing ? (
                   <>
@@ -521,3 +521,4 @@ export default function DreamJobPage() {
     </div>
   );
 }
+

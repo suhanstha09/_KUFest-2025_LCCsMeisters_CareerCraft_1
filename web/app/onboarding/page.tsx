@@ -56,9 +56,9 @@ export default function Onboarding() {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-slate-50 via-purple-50 to-slate-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 transition-colors">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50 to-slate-50 dark:from-slate-900 dark:via-blue-900 dark:to-slate-900 transition-colors">
       {/* Navigation */}
-      <nav className="flex items-center justify-between px-6 py-4 sm:px-12 border-b border-slate-200 dark:border-purple-500/20">
+      <nav className="flex items-center justify-between px-6 py-4 sm:px-12 border-b border-slate-200 dark:border-blue-500/20">
         <Link href="/" className="flex items-center gap-2">
   <Image
             src="/logo.png"
@@ -77,11 +77,11 @@ export default function Onboarding() {
 
       <div className="flex items-center justify-center py-12 px-4 sm:px-6">
         <div className="w-full max-w-2xl">
-          <div className="bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-purple-500/20 p-8 sm:p-10 transition-colors">
+          <div className="bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-blue-500/20 p-8 sm:p-10 transition-colors">
             {/* Header */}
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full mb-4">
-                <Upload className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-4">
+                <Upload className="h-8 w-8 text-blue-600 dark:text-blue-400" />
               </div>
               <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
                 Upload Your Resume
@@ -94,7 +94,7 @@ export default function Onboarding() {
 
             {/* Upload Area */}
             <div className="space-y-6">
-              <div className="border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-lg p-8 text-center hover:border-purple-500 dark:hover:border-purple-500 transition-colors">
+              <div className="border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-lg p-8 text-center hover:border-blue-500 dark:hover:border-blue-500 transition-colors">
                 <input
                   type="file"
                   id="resume-upload"
@@ -121,13 +121,13 @@ export default function Onboarding() {
 
               {/* Selected File Info */}
               {selectedFile && (
-                <div className="bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-500/30 rounded-lg p-4 flex items-center gap-3">
-                  <FileText className="h-5 w-5 text-purple-600 dark:text-purple-400 shrink-0" />
+                <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-500/30 rounded-lg p-4 flex items-center gap-3">
+                  <FileText className="h-5 w-5 text-blue-600 dark:text-blue-400 shrink-0" />
                   <div className="flex-1">
-                    <p className="font-medium text-purple-900 dark:text-purple-100">
+                    <p className="font-medium text-blue-900 dark:text-blue-100">
                       {selectedFile.name}
                     </p>
-                    <p className="text-sm text-purple-700 dark:text-purple-300">
+                    <p className="text-sm text-blue-700 dark:text-blue-300">
                       {(selectedFile.size / 1024 / 1024).toFixed(2)} MB
                     </p>
                   </div>
@@ -136,7 +136,7 @@ export default function Onboarding() {
                     size="sm"
                     onClick={() => setSelectedFile(null)}
                     disabled={isUploading}
-                    className="border-purple-300 dark:border-purple-700 text-purple-600 dark:text-purple-400"
+                    className="border-blue-300 dark:border-blue-700 text-blue-600 dark:text-blue-400"
                   >
                     Remove
                   </Button>
@@ -177,7 +177,7 @@ export default function Onboarding() {
               <Button
                 onClick={handleSubmit}
                 disabled={!selectedFile || isUploading || uploadSuccess}
-                className="w-full bg-purple-600 hover:bg-purple-700 disabled:bg-slate-400 dark:disabled:bg-slate-700"
+                className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-slate-400 dark:disabled:bg-slate-700"
               >
                 {isUploading ? (
                   <>

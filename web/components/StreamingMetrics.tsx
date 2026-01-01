@@ -14,14 +14,14 @@ interface MetricCardProps {
 function MetricCard({ icon, label, value, color, isLoading }: MetricCardProps) {
   const getColorClasses = (color: string) => {
     switch (color) {
-      case 'purple':
+      case 'blue':
         return {
-          bg: 'bg-purple-50 dark:bg-purple-950/30',
-          border: 'border-purple-200 dark:border-purple-800',
-          icon: 'text-purple-600 dark:text-purple-400',
-          iconBg: 'bg-purple-100 dark:bg-purple-900/50',
-          bar: 'bg-purple-600',
-          text: 'text-purple-700 dark:text-purple-300',
+          bg: 'bg-blue-50 dark:bg-blue-950/30',
+          border: 'border-blue-200 dark:border-blue-800',
+          icon: 'text-blue-600 dark:text-blue-400',
+          iconBg: 'bg-blue-100 dark:bg-blue-900/50',
+          bar: 'bg-blue-600',
+          text: 'text-blue-700 dark:text-blue-300',
         };
       case 'blue':
         return {
@@ -115,7 +115,7 @@ export function StreamingMetrics({ metrics, isStreaming }: StreamingMetricsProps
       icon: <TrendingUp className="h-5 w-5" />,
       label: 'Overall Match',
       value: metrics.match_score,
-      color: 'purple',
+      color: 'blue',
     },
     {
       icon: <Target className="h-5 w-5" />,
@@ -145,7 +145,7 @@ export function StreamingMetrics({ metrics, isStreaming }: StreamingMetricsProps
       icon: <Brain className="h-5 w-5" />,
       label: 'Domain Knowledge',
       value: metrics.domain_knowledge_score,
-      color: 'purple',
+      color: 'blue',
     },
     {
       icon: <GraduationCap className="h-5 w-5" />,

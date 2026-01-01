@@ -80,7 +80,7 @@ export default function SkillAnalysis() {
             onClick={() => setSelectedCategory(cat.id)}
             className={`px-4 py-2 rounded-lg font-medium transition ${
               selectedCategory === cat.id
-                ? 'bg-purple-600 text-white'
+                ? 'bg-blue-600 text-white'
                 : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
             }`}
           >
@@ -103,7 +103,7 @@ export default function SkillAnalysis() {
         </div>
         <div className="bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800 p-6 transition-colors">
           <p className="text-slate-600 dark:text-slate-400 text-sm font-medium mb-2">Your Percentile</p>
-          <p className="text-3xl font-bold text-purple-600 dark:text-purple-400">73rd</p>
+          <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">73rd</p>
           <p className="text-xs text-slate-500 dark:text-slate-500 mt-2">Better than 73% of peers</p>
         </div>
       </div>
@@ -112,7 +112,7 @@ export default function SkillAnalysis() {
       <div className="bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800 overflow-hidden transition-colors">
         <div className="p-6 border-b border-slate-200 dark:border-slate-800">
           <h2 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <BarChart3 className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+            <BarChart3 className="h-5 w-5 text-blue-600 dark:text-blue-400" />
             Detailed Skill Breakdown
           </h2>
         </div>
@@ -128,7 +128,7 @@ export default function SkillAnalysis() {
                   <div className="flex gap-4 text-sm">
                     <div>
                       <p className="text-slate-600 dark:text-slate-400">Your Level</p>
-                      <p className="text-xl font-bold text-purple-600 dark:text-purple-400">
+                      <p className="text-xl font-bold text-blue-600 dark:text-blue-400">
                         {skill.yourLevel}%
                       </p>
                     </div>
@@ -167,7 +167,7 @@ export default function SkillAnalysis() {
                   </div>
                   <div className="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-purple-500 rounded-full"
+                      className="h-full bg-blue-500 rounded-full"
                       style={{ width: `${skill.yourLevel}%` }}
                     />
                   </div>
@@ -206,24 +206,24 @@ export default function SkillAnalysis() {
       </div>
 
       {/* Recommendations */}
-      <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/30 dark:to-pink-900/30 rounded-lg border border-purple-200 dark:border-purple-500/20 p-8 transition-colors">
+      <div className="bg-gradient-to-r from-blue-50 to-orange-50 dark:from-blue-900/30 dark:to-orange-900/30 rounded-lg border border-blue-200 dark:border-blue-500/20 p-8 transition-colors">
         <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Recommendations</h2>
         <ul className="space-y-3">
           <li className="flex gap-3">
-            <ChevronRight className="h-5 w-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
+            <ChevronRight className="h-5 w-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
             <span className="text-slate-700 dark:text-slate-300">
               Focus on improving Vue.js (28th percentile) - critical gap in your toolkit
             </span>
           </li>
           <li className="flex gap-3">
-            <ChevronRight className="h-5 w-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
+            <ChevronRight className="h-5 w-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
             <span className="text-slate-700 dark:text-slate-300">
               Leverage your strength in React and HTML/CSS to expand into full-stack
               development
             </span>
           </li>
           <li className="flex gap-3">
-            <ChevronRight className="h-5 w-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
+            <ChevronRight className="h-5 w-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
             <span className="text-slate-700 dark:text-slate-300">
               Consider learning backend technologies to increase job market opportunities
             </span>

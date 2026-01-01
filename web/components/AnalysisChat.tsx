@@ -94,10 +94,10 @@ export function AnalysisChat({ analysisId, initialContext }: AnalysisChatProps) 
   };
 
   return (
-    <Card className="border-purple-100 dark:border-purple-900/50">
+    <Card className="border-blue-100 dark:border-blue-900/50">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <Sparkles className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+          <Sparkles className="h-5 w-5 text-blue-600 dark:text-blue-400" />
           Ask Questions About Your Analysis
         </CardTitle>
       </CardHeader>
@@ -114,7 +114,7 @@ export function AnalysisChat({ analysisId, initialContext }: AnalysisChatProps) 
                   <button
                     key={index}
                     onClick={() => handleQuickQuestion(question)}
-                    className="text-left p-3 rounded-lg border-2 border-slate-200 dark:border-slate-700 hover:border-purple-600 dark:hover:border-purple-600 transition-all text-sm text-slate-700 dark:text-slate-300"
+                    className="text-left p-3 rounded-lg border-2 border-slate-200 dark:border-slate-700 hover:border-blue-600 dark:hover:border-blue-600 transition-all text-sm text-slate-700 dark:text-slate-300"
                   >
                     {question}
                   </button>
@@ -136,12 +136,12 @@ export function AnalysisChat({ analysisId, initialContext }: AnalysisChatProps) 
                   <div
                     className={`flex items-center justify-center w-8 h-8 rounded-full shrink-0 ${
                       message.role === 'user'
-                        ? 'bg-purple-100 dark:bg-purple-900/50'
+                        ? 'bg-blue-100 dark:bg-blue-900/50'
                         : 'bg-blue-100 dark:bg-blue-900/50'
                     }`}
                   >
                     {message.role === 'user' ? (
-                      <User className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                      <User className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                     ) : (
                       <Bot className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                     )}
@@ -154,7 +154,7 @@ export function AnalysisChat({ analysisId, initialContext }: AnalysisChatProps) 
                     <div
                       className={`inline-block rounded-lg p-3 ${
                         message.role === 'user'
-                          ? 'bg-purple-600 text-white'
+                          ? 'bg-blue-600 text-white'
                           : 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700'
                       }`}
                     >
@@ -195,14 +195,14 @@ export function AnalysisChat({ analysisId, initialContext }: AnalysisChatProps) 
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="Ask anything about your analysis..."
-              className="flex-1 p-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
+              className="flex-1 p-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
               rows={3}
               disabled={isLoading}
             />
             <Button
               onClick={handleSend}
               disabled={!input.trim() || isLoading}
-              className="self-end bg-purple-600 hover:bg-purple-700"
+              className="self-end bg-blue-600 hover:bg-blue-700"
             >
               {isLoading ? (
                 <Loader2 className="h-5 w-5 animate-spin" />

@@ -134,7 +134,7 @@ export default function InterviewPrep() {
             placeholder="Search by company or role..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-500 focus:border-purple-500 focus:outline-none transition"
+            className="w-full pl-10 pr-4 py-2 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-500 focus:border-blue-500 focus:outline-none transition"
           />
         </div>
 
@@ -145,7 +145,7 @@ export default function InterviewPrep() {
               onClick={() => setSelectedCategory(cat.toLowerCase())}
               className={`px-4 py-2 rounded-lg font-medium transition ${
                 selectedCategory === cat.toLowerCase()
-                  ? 'bg-purple-600 text-white'
+                  ? 'bg-blue-600 text-white'
                   : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
               }`}
             >
@@ -160,7 +160,7 @@ export default function InterviewPrep() {
         {filteredInterviews.map((interview) => (
           <div
             key={interview.id}
-            className="bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800 p-6 hover:border-purple-500/50 transition"
+            className="bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800 p-6 hover:border-blue-500/50 transition"
           >
             <div className="flex items-start justify-between mb-4">
               <div>
@@ -240,13 +240,13 @@ export default function InterviewPrep() {
             {/* Insights */}
             <div className="bg-slate-100 dark:bg-slate-800/50 rounded-lg p-4 mb-4 border border-slate-200 dark:border-slate-700">
               <h4 className="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2 flex items-center gap-2">
-                <TrendingUp className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                <TrendingUp className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                 Key Insights
               </h4>
               <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                 {interview.insights.slice(0, 2).map((insight, idx) => (
                   <li key={idx} className="flex gap-2">
-                    <span className="text-purple-600 dark:text-purple-400">•</span>
+                    <span className="text-blue-600 dark:text-blue-400">•</span>
                     {insight}
                   </li>
                 ))}
@@ -255,7 +255,7 @@ export default function InterviewPrep() {
 
             {/* Actions */}
             <div className="flex gap-3">
-              <Button className="flex-1 bg-purple-600 hover:bg-purple-700">
+              <Button className="flex-1 bg-blue-600 hover:bg-blue-700">
                 <MessageSquare className="h-4 w-4 mr-2" />
                 View Full Experience
               </Button>
@@ -279,12 +279,12 @@ export default function InterviewPrep() {
       )}
 
       {/* CTA for Contributing */}
-      <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/30 dark:to-pink-900/30 rounded-lg border border-purple-200 dark:border-purple-500/20 p-8 transition-colors">
+      <div className="bg-gradient-to-r from-blue-50 to-orange-50 dark:from-blue-900/30 dark:to-orange-900/30 rounded-lg border border-blue-200 dark:border-blue-500/20 p-8 transition-colors">
         <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Share Your Experience</h2>
         <p className="text-slate-700 dark:text-slate-300 mb-6">
           Have you been through an interview? Share your experience to help others prepare!
         </p>
-        <Button className="bg-purple-600 hover:bg-purple-700">
+        <Button className="bg-blue-600 hover:bg-blue-700">
           Submit Your Interview
         </Button>
       </div>

@@ -150,7 +150,7 @@ export function EducationSection() {
         {!isAdding && (
           <Button
             onClick={handleAdd}
-            className="bg-purple-600 hover:bg-purple-700 text-white"
+            className="bg-blue-600 hover:bg-blue-700 text-white"
           >
             <Plus className="mr-2 h-4 w-4" />
             Add Education
@@ -195,7 +195,7 @@ export function EducationSection() {
                   id="degreeLevel"
                   value={formData.degreeLevel}
                   onChange={(e) => handleChange('degreeLevel', e.target.value)}
-                  className="flex h-10 w-full rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-2 text-sm ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 dark:focus-visible:ring-purple-400 focus-visible:ring-offset-2 text-slate-900 dark:text-slate-50"
+                  className="flex h-10 w-full rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-2 text-sm ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-blue-400 focus-visible:ring-offset-2 text-slate-900 dark:text-slate-50"
                 >
                   {degreeLevels.map(level => (
                     <option key={level.value} value={level.value}>
@@ -253,7 +253,7 @@ export function EducationSection() {
                   id="isCurrent"
                   checked={formData.isCurrent}
                   onChange={(e) => handleChange('isCurrent', e.target.checked)}
-                  className="h-4 w-4 rounded border-slate-300 text-purple-600 focus:ring-purple-500"
+                  className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
                 />
                 <Label htmlFor="isCurrent" className="cursor-pointer">
                   I currently study here
@@ -276,7 +276,7 @@ export function EducationSection() {
               <Button
                 onClick={handleSave}
                 disabled={createMutation.isPending || updateMutation.isPending}
-                className="bg-purple-600 hover:bg-purple-700 text-white"
+                className="bg-blue-600 hover:bg-blue-700 text-white"
               >
                 {createMutation.isPending || updateMutation.isPending ? (
                   <>
@@ -307,7 +307,7 @@ export function EducationSection() {
       {/* Loading State */}
       {isLoading && (
         <Card className="p-12 bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-center">
-          <Loader2 className="h-8 w-8 animate-spin mx-auto text-purple-600 dark:text-purple-400" />
+          <Loader2 className="h-8 w-8 animate-spin mx-auto text-blue-600 dark:text-blue-400" />
           <p className="text-slate-500 dark:text-slate-400 mt-4">Loading education records...</p>
         </Card>
       )}
@@ -334,7 +334,7 @@ export function EducationSection() {
                 <h4 className="text-lg font-semibold text-slate-900 dark:text-white">
                   {education.degree}
                 </h4>
-                <p className="text-purple-600 dark:text-purple-400 font-medium">
+                <p className="text-blue-600 dark:text-blue-400 font-medium">
                   {education.institution}
                 </p>
                 {education.fieldOfStudy && (
@@ -400,3 +400,4 @@ export function EducationSection() {
     </div>
   );
 }
+

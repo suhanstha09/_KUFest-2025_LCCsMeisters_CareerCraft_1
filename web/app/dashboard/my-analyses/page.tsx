@@ -142,7 +142,7 @@ export default function MyAnalysesPage() {
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Card className="border-purple-100 dark:border-purple-900/50">
+        <Card className="border-blue-100 dark:border-blue-900/50">
           <CardContent className="pt-6">
             <div className="flex items-center justify-between">
               <div>
@@ -153,7 +153,7 @@ export default function MyAnalysesPage() {
                   {stats.total}
                 </p>
               </div>
-              <FileText className="h-10 w-10 text-purple-600 dark:text-purple-400" />
+              <FileText className="h-10 w-10 text-blue-600 dark:text-blue-400" />
             </div>
           </CardContent>
         </Card>
@@ -202,7 +202,7 @@ export default function MyAnalysesPage() {
               </CardTitle>
             </div>
             <Link href="/dashboard/dream-job-streaming">
-              <Button className="bg-purple-600 hover:bg-purple-700">
+              <Button className="bg-blue-600 hover:bg-blue-700">
                 <Sparkles className="h-4 w-4 mr-2" />
                 New Analysis
               </Button>
@@ -257,7 +257,7 @@ export default function MyAnalysesPage() {
       {/* Loading State */}
       {isLoading && (
         <div className="flex items-center justify-center py-12">
-          <Loader2 className="h-8 w-8 animate-spin text-purple-600" />
+          <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
         </div>
       )}
 
@@ -297,7 +297,7 @@ export default function MyAnalysesPage() {
                 </p>
               </div>
               <Link href="/dashboard/dream-job-streaming">
-                <Button className="bg-purple-600 hover:bg-purple-700">
+                <Button className="bg-blue-600 hover:bg-blue-700">
                   <Sparkles className="h-4 w-4 mr-2" />
                   Analyze Your First Job
                 </Button>

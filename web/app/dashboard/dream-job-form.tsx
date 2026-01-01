@@ -46,14 +46,14 @@ export default function DreamJobForm() {
             value={roleDescription}
             onChange={(e) => setRoleDescription(e.target.value)}
             placeholder="e.g., Product Manager at a tech startup..."
-            className="w-full p-2 text-sm rounded border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
+            className="w-full p-2 text-sm rounded border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
             rows={3}
           />
           <Button
             onClick={handleRoleSubmit}
             disabled={!roleDescription.trim()}
             size="sm"
-            className="w-full bg-purple-600 hover:bg-purple-700 text-white"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white"
           >
             Next
           </Button>
@@ -73,7 +73,7 @@ export default function DreamJobForm() {
                   onClick={() => setSelectedIndustry(industry)}
                   className={`p-2 text-xs rounded border transition ${
                     selectedIndustry === industry
-                      ? 'border-purple-500 bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300'
+                      ? 'border-blue-500 bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300'
                       : 'border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400'
                   }`}
                 >
@@ -94,7 +94,7 @@ export default function DreamJobForm() {
                   onClick={() => setSelectedLevel(level)}
                   className={`w-full p-2 text-xs rounded border transition text-left ${
                     selectedLevel === level
-                      ? 'border-purple-500 bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300'
+                      ? 'border-blue-500 bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300'
                       : 'border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-400'
                   }`}
                 >
@@ -108,7 +108,7 @@ export default function DreamJobForm() {
             onClick={handleAnalyze}
             disabled={!selectedIndustry || !selectedLevel || isAnalyzing}
             size="sm"
-            className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white"
+            className="w-full bg-gradient-to-r from-blue-600 to-orange-600 hover:from-blue-700 hover:to-orange-700 text-white"
           >
             {isAnalyzing ? (
               <>
@@ -128,7 +128,7 @@ export default function DreamJobForm() {
       {step === 'analyzing' && (
         <div className="flex flex-col items-center justify-center py-6">
           <div className="relative mb-3">
-            <Sparkles className="h-8 w-8 text-purple-600 dark:text-purple-400 animate-spin" />
+            <Sparkles className="h-8 w-8 text-blue-600 dark:text-blue-400 animate-spin" />
           </div>
           <p className="text-xs text-slate-600 dark:text-slate-400 text-center">
             Analyzing your fit...
@@ -138,3 +138,4 @@ export default function DreamJobForm() {
     </div>
   );
 }
+

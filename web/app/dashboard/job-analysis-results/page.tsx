@@ -160,10 +160,10 @@ export default function JobAnalysisResultsPage() {
         </div>
 
         {/* Overall Score Card */}
-        <Card className="border-purple-100 dark:border-purple-900/50 mb-8">
+        <Card className="border-blue-100 dark:border-blue-900/50 mb-8">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Target className="h-5 w-5 text-purple-600" />
+              <Target className="h-5 w-5 text-blue-600" />
               Overall Match Score
             </CardTitle>
           </CardHeader>
@@ -185,7 +185,7 @@ export default function JobAnalysisResultsPage() {
                 <Progress value={analysisData.match_score} className="h-3" />
               </div>
               <div className="text-center">
-                <p className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+                <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">
                   {analysisData.readiness_percentage}%
                 </p>
                 <p className="text-sm text-slate-600 dark:text-slate-400">
@@ -210,7 +210,7 @@ export default function JobAnalysisResultsPage() {
           <Card className="mb-8">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Sparkles className="h-5 w-5 text-purple-600" />
+                <Sparkles className="h-5 w-5 text-blue-600" />
                 Analysis Summary
               </CardTitle>
             </CardHeader>
@@ -373,7 +373,7 @@ export default function JobAnalysisResultsPage() {
                     <span className="text-sm text-slate-600 dark:text-slate-400">
                       Confidence Level
                     </span>
-                    <span className="text-sm font-semibold text-purple-600 dark:text-purple-400">
+                    <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">
                       {analysisData.confidence_level}
                     </span>
                   </div>
@@ -524,9 +524,9 @@ export default function JobAnalysisResultsPage() {
 
         {/* Next Steps */}
         {analysisData.next_steps && (
-          <Card className="border-purple-100 dark:border-purple-900/50 mb-8">
+          <Card className="border-blue-100 dark:border-blue-900/50 mb-8">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-purple-700 dark:text-purple-300">
+              <CardTitle className="flex items-center gap-2 text-blue-700 dark:text-blue-300">
                 <TrendingUp className="h-5 w-5" />
                 Next Steps
               </CardTitle>
@@ -535,7 +535,7 @@ export default function JobAnalysisResultsPage() {
               <div className="space-y-3">
                 {parseListString(analysisData.next_steps).map((step, idx) => (
                   <div key={idx} className="flex items-start gap-3">
-                    <div className="flex items-center justify-center w-6 h-6 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 font-semibold text-sm shrink-0">
+                    <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 font-semibold text-sm shrink-0">
                       {idx + 1}
                     </div>
                     <p className="text-slate-700 dark:text-slate-300 pt-0.5">
@@ -602,7 +602,7 @@ export default function JobAnalysisResultsPage() {
             </Button>
           </Link>
           <Link href="/dashboard/dream-job">
-            <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
               <Briefcase className="mr-2 h-5 w-5" />
               Analyze Another Job
             </Button>

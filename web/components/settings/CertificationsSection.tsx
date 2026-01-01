@@ -131,7 +131,7 @@ export function CertificationsSection() {
         {!isAdding && (
           <Button
             onClick={handleAdd}
-            className="bg-purple-600 hover:bg-purple-700 text-white"
+            className="bg-blue-600 hover:bg-blue-700 text-white"
           >
             <Plus className="mr-2 h-4 w-4" />
             Add Certification
@@ -219,7 +219,7 @@ export function CertificationsSection() {
                   id="doesNotExpire"
                   checked={formData.doesNotExpire}
                   onChange={(e) => handleChange('doesNotExpire', e.target.checked)}
-                  className="h-4 w-4 rounded border-slate-300 text-purple-600 focus:ring-purple-500"
+                  className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
                 />
                 <Label htmlFor="doesNotExpire" className="cursor-pointer">
                   This certification does not expire
@@ -231,7 +231,7 @@ export function CertificationsSection() {
               <Button
                 onClick={handleSave}
                 disabled={createMutation.isPending || updateMutation.isPending}
-                className="bg-purple-600 hover:bg-purple-700 text-white"
+                className="bg-blue-600 hover:bg-blue-700 text-white"
               >
                 {createMutation.isPending || updateMutation.isPending ? (
                   <>
@@ -262,7 +262,7 @@ export function CertificationsSection() {
       {/* Loading State */}
       {isLoading && (
         <Card className="p-12 bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-center">
-          <Loader2 className="h-8 w-8 animate-spin mx-auto text-purple-600 dark:text-purple-400" />
+          <Loader2 className="h-8 w-8 animate-spin mx-auto text-blue-600 dark:text-blue-400" />
           <p className="text-slate-500 dark:text-slate-400 mt-4">Loading certifications...</p>
         </Card>
       )}
@@ -293,14 +293,14 @@ export function CertificationsSection() {
               <div className="flex justify-between items-start">
                 <div className="flex-1">
                   <div className="flex items-start gap-3">
-                    <div className="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
-                      <Award className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+                    <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                      <Award className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                     </div>
                     <div className="flex-1">
                       <h4 className="text-lg font-semibold text-slate-900 dark:text-white">
                         {certification.name}
                       </h4>
-                      <p className="text-purple-600 dark:text-purple-400 font-medium">
+                      <p className="text-blue-600 dark:text-blue-400 font-medium">
                         {certification.issuingOrganization}
                       </p>
 
@@ -351,7 +351,7 @@ export function CertificationsSection() {
                           href={certification.credentialUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-sm text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1 mt-2"
+                          className="text-sm text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1 mt-2"
                         >
                           <ExternalLink className="h-4 w-4" />
                           View Credential
@@ -396,3 +396,4 @@ export function CertificationsSection() {
     </div>
   );
 }
+

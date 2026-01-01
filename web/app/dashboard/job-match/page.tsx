@@ -31,7 +31,7 @@ export default function JobMatch() {
         </div>
 
         <form onSubmit={handleAnalyze} className="max-w-2xl">
-          <div className="bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-purple-500/20 p-8 transition-colors">
+          <div className="bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-blue-500/20 p-8 transition-colors">
             <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-3">
               Job Posting URL
             </label>
@@ -40,12 +40,12 @@ export default function JobMatch() {
               value={jobUrl}
               onChange={(e) => setJobUrl(e.target.value)}
               placeholder="https://linkedin.com/jobs/... or any job posting link"
-              className="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-500 focus:border-purple-500 focus:outline-none transition mb-6"
+              className="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-500 focus:border-blue-500 focus:outline-none transition mb-6"
               required
             />
             <Button
               type="submit"
-              className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg font-medium"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium"
             >
               Analyze Job Match
             </Button>
@@ -95,10 +95,10 @@ export default function JobMatch() {
       </div>
 
       {/* Overall Match Score */}
-      <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/50 dark:to-pink-900/50 rounded-lg border border-purple-200 dark:border-purple-500/20 p-8 transition-colors">
+      <div className="bg-gradient-to-br from-blue-50 to-orange-50 dark:from-blue-900/50 dark:to-orange-900/50 rounded-lg border border-blue-200 dark:border-blue-500/20 p-8 transition-colors">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Overall Match</h2>
-          <Target className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+          <Target className="h-8 w-8 text-blue-600 dark:text-blue-400" />
         </div>
 
         <div className="grid md:grid-cols-4 gap-6">
@@ -184,8 +184,8 @@ export default function JobMatch() {
                   <strong>Ready to apply:</strong> You meet 75% of requirements
                 </span>
               </div>
-              <div className="flex items-center gap-3 bg-purple-50 dark:bg-slate-800/50 rounded-lg p-3 border border-purple-200 dark:border-transparent">
-                <Zap className="h-5 w-5 text-purple-600 dark:text-purple-400 flex-shrink-0" />
+              <div className="flex items-center gap-3 bg-blue-50 dark:bg-slate-800/50 rounded-lg p-3 border border-blue-200 dark:border-transparent">
+                <Zap className="h-5 w-5 text-blue-600 dark:text-blue-400 flex-shrink-0" />
                 <span className="text-sm text-slate-700 dark:text-slate-200">
                   <strong>Hiring probability:</strong> 68% chance of interview
                 </span>
@@ -283,13 +283,13 @@ export default function JobMatch() {
       </div>
 
       {/* CTA */}
-      <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/30 dark:to-pink-900/30 border border-purple-200 dark:border-purple-500/20 rounded-lg p-8 transition-colors">
+      <div className="bg-gradient-to-r from-blue-50 to-orange-50 dark:from-blue-900/30 dark:to-orange-900/30 border border-blue-200 dark:border-blue-500/20 rounded-lg p-8 transition-colors">
         <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Next Steps</h2>
         <p className="text-slate-700 dark:text-slate-300 mb-6">
           Get a personalized learning roadmap to close your critical gaps and increase
           your chances of landing this role.
         </p>
-        <Button className="bg-purple-600 hover:bg-purple-700 gap-2">
+        <Button className="bg-blue-600 hover:bg-blue-700 gap-2">
           <Download className="h-4 w-4" />
           Generate Personalized Roadmap
         </Button>

@@ -31,7 +31,7 @@ export default function Dashboard() {
                 72%
               </p>
             </div>
-            <TrendingUp className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+            <TrendingUp className="h-8 w-8 text-blue-600 dark:text-blue-400" />
           </div>
           <p className="text-xs text-slate-500 dark:text-slate-500 mt-4">
             Status: UNFIT → Working to FIT
@@ -96,7 +96,7 @@ export default function Dashboard() {
       {/* Quick Action Cards */}
       <div className="grid md:grid-cols-2 gap-6">
         {/* Profile Analysis */}
-        <div className="bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800 rounded-lg border border-slate-200 dark:border-purple-500/20 p-8 transition-colors">
+        <div className="bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800 rounded-lg border border-slate-200 dark:border-blue-500/20 p-8 transition-colors">
           <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
             My Profile Analysis
           </h2>
@@ -104,13 +104,13 @@ export default function Dashboard() {
             View your extracted skills, experience, and current readiness
             assessment
           </p>
-          <Button className="w-full bg-purple-600 hover:bg-purple-700">
+          <Button className="w-full bg-blue-600 hover:bg-blue-700">
             View Profile
           </Button>
         </div>
 
         {/* Dream Job Match */}
-        <div className="bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800 rounded-lg border border-slate-200 dark:border-purple-500/20 p-8 transition-colors">
+        <div className="bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800 rounded-lg border border-slate-200 dark:border-blue-500/20 p-8 transition-colors">
           <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
             Dream Job Assessment
           </h2>
@@ -119,7 +119,7 @@ export default function Dashboard() {
             analysis
           </p>
           <Link href="/dashboard/dream-job">
-            <Button className="w-full bg-purple-600 hover:bg-purple-700">
+            <Button className="w-full bg-blue-600 hover:bg-blue-700">
               Analyze Job
             </Button>
           </Link>

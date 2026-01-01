@@ -83,7 +83,7 @@ export default function DashboardLayout({
                   href={item.href}
                   className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition group"
                 >
-                  <Icon className="h-5 w-5 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition" />
+                  <Icon className="h-5 w-5 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition" />
                   <span>{item.label}</span>
                 </Link>
               )
@@ -100,28 +100,28 @@ export default function DashboardLayout({
                 href="/dashboard/dream-job-streaming"
                 className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition group"
               >
-                <Sparkles className="h-5 w-5 text-purple-600 dark:text-purple-400 group-hover:text-purple-600 dark:group-hover:text-purple-400" />
+                <Sparkles className="h-5 w-5 text-blue-600 dark:text-blue-400 group-hover:text-blue-600 dark:group-hover:text-blue-400" />
                 <span>New Analysis</span>
               </Link>
               <Link
                 href="/dashboard/my-analyses"
                 className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition group"
               >
-                <FileText className="h-5 w-5 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition" />
+                <FileText className="h-5 w-5 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition" />
                 <span>My Analyses</span>
               </Link>
               <Link
                 href="/dashboard/ai-career-chat"
                 className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition group"
               >
-                <MessageSquare className="h-5 w-5 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition" />
+                <MessageSquare className="h-5 w-5 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition" />
                 <span>AI Career Chat</span>
               </Link>
               <Link
                 href="/dashboard/settings"
                 className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition group"
               >
-                <User className="h-5 w-5 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition" />
+                <User className="h-5 w-5 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition" />
                 <span>Profile</span>
               </Link>
             </div>

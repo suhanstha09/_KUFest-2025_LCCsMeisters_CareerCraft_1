@@ -72,7 +72,7 @@ export function BasicInfoSection() {
   if (isFetchingProfile) {
     return (
       <Card className="p-12 bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-center">
-        <Loader2 className="h-8 w-8 animate-spin mx-auto text-purple-600 dark:text-purple-400" />
+        <Loader2 className="h-8 w-8 animate-spin mx-auto text-blue-600 dark:text-blue-400" />
         <p className="text-slate-500 dark:text-slate-400 mt-4">Loading profile...</p>
       </Card>
     );
@@ -173,7 +173,7 @@ export function BasicInfoSection() {
           <Button
             type="submit"
             disabled={updateMutation.isPending}
-            className="bg-purple-600 hover:bg-purple-700 text-white"
+            className="bg-blue-600 hover:bg-blue-700 text-white"
           >
             {updateMutation.isPending ? (
               <>
@@ -192,3 +192,4 @@ export function BasicInfoSection() {
     </Card>
   );
 }
+

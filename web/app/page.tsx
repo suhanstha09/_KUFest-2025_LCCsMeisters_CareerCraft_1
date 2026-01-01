@@ -21,16 +21,16 @@ import { ModeToggle } from "@/components/ToggleButton"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-linear-to-br from-slate-50 via-purple-50/30 to-slate-50 dark:from-slate-950 dark:via-purple-950/20 dark:to-slate-950">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50/30 to-slate-50 dark:from-slate-950 dark:via-blue-950/20 dark:to-slate-950">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 sm:px-12 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
         <div className="flex items-center gap-2">
           {/* <div className="relative">
             <Target
-              className="h-8 w-8 text-purple-600 dark:text-purple-400"
+              className="h-8 w-8 text-blue-600 dark:text-blue-400"
               fill="currentColor"
             />
-            <div className="absolute inset-0 blur-lg bg-purple-600/20 dark:bg-purple-400/20"></div>
+            <div className="absolute inset-0 blur-lg bg-blue-600/20 dark:bg-blue-400/20"></div>
           </div> */}
           <Image
             src="/logo.png"
@@ -47,7 +47,7 @@ export default function Home() {
             </Button>
           </Link>
           <Link href="/signup">
-            <Button className="bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg shadow-purple-500/30">
+            <Button className="bg-linear-to-r from-blue-600 to-orange-600 hover:from-blue-700 hover:to-orange-700 text-white shadow-lg shadow-blue-500/30">
               Sign Up Free
             </Button>
           </Link>
@@ -58,12 +58,12 @@ export default function Home() {
       <section className="px-6 py-20 sm:px-12 sm:py-32 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/10 dark:bg-pink-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 dark:bg-blue-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-500/10 dark:bg-orange-500/5 rounded-full blur-3xl"></div>
         </div>
 
         <div className="max-w-5xl mx-auto text-center">
-          <Badge className="mb-6 bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800 hover:bg-purple-200 dark:hover:bg-purple-900">
+          <Badge className="mb-6 bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800 hover:bg-blue-200 dark:hover:bg-blue-900">
             <Sparkles className="h-3 w-3 mr-1" />
             AI-Powered Career Intelligence
           </Badge>
@@ -73,7 +73,7 @@ export default function Home() {
               Know Your Gap.
             </span>
             <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 animate-gradient bg-size-[200%_auto]">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-orange-600 to-blue-600 dark:from-blue-400 dark:via-orange-400 dark:to-blue-400 animate-gradient bg-size-[200%_auto]">
               Close Your Gap.
             </span>
           </h1>
@@ -89,7 +89,7 @@ export default function Home() {
             <Link href="/signup">
               <Button
                 size="lg"
-                className="bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-xl shadow-purple-500/30 dark:shadow-purple-500/20 text-lg h-12"
+                className="bg-linear-to-r from-blue-600 to-orange-600 hover:from-blue-700 hover:to-orange-700 text-white shadow-xl shadow-blue-500/30 dark:shadow-blue-500/20 text-lg h-12"
               >
                 Start Free Analysis <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -99,7 +99,7 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-purple-200 dark:border-purple-800 hover:bg-purple-50 dark:hover:bg-purple-950/50 text-lg h-12"
+                className="border-2 border-blue-200 dark:border-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950/50 text-lg h-12"
               >
                 See How It Works
               </Button>
@@ -116,10 +116,10 @@ export default function Home() {
             ].map((stat) => (
               <Card
                 key={stat.label}
-                className="border-purple-100 dark:border-purple-900/50 bg-white/50 dark:bg-slate-900/50 backdrop-blur"
+                className="border-blue-100 dark:border-blue-900/50 bg-white/50 dark:bg-slate-900/50 backdrop-blur"
               >
                 <CardContent className="p-6 text-center">
-                  <stat.icon className="h-6 w-6 mx-auto mb-2 text-purple-600 dark:text-purple-400" />
+                  <stat.icon className="h-6 w-6 mx-auto mb-2 text-blue-600 dark:text-blue-400" />
                   <div className="text-2xl font-bold text-slate-900 dark:text-white">
                     {stat.value}
                   </div>
@@ -140,7 +140,7 @@ export default function Home() {
       >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800">
+            <Badge className="mb-4 bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800">
               Features
             </Badge>
             <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-4">
@@ -206,8 +206,7 @@ export default function Home() {
       <section className="px-6 py-20 sm:px-12">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800">
-              How It Works
+            <Badge className="mb-4 bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800">
             </Badge>
             <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-4">
               Your Path to Success in 3 Steps
@@ -239,13 +238,13 @@ export default function Home() {
               },
             ].map((item, idx) => (
               <div key={idx} className="relative">
-                <Card className="border-purple-100 dark:border-purple-900/50 hover:border-purple-300 dark:hover:border-purple-700 transition-all hover:shadow-lg">
+                <Card className="border-blue-100 dark:border-blue-900/50 hover:border-blue-300 dark:hover:border-blue-700 transition-all hover:shadow-lg">
                   <CardHeader>
                     <div className="flex items-start justify-between mb-4">
-                      <div className="p-3 rounded-xl bg-linear-to-br from-purple-500 to-pink-500 text-white shadow-lg">
+                      <div className="p-3 rounded-xl bg-linear-to-br from-blue-500 to-orange-500 text-white shadow-lg">
                         <item.icon className="h-6 w-6" />
                       </div>
-                      <span className="text-5xl font-bold text-purple-100 dark:text-purple-950">
+                      <span className="text-5xl font-bold text-blue-100 dark:text-blue-950">
                         {item.step}
                       </span>
                     </div>
@@ -257,7 +256,7 @@ export default function Home() {
                 </Card>
                 {idx < 2 && (
                   <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                    <ArrowRight className="h-8 w-8 text-purple-300 dark:text-purple-800" />
+                    <ArrowRight className="h-8 w-8 text-blue-300 dark:text-blue-800" />
                   </div>
                 )}
               </div>
@@ -269,14 +268,14 @@ export default function Home() {
       {/* CTA Section */}
       <section className="px-6 py-20 sm:px-12">
         <div className="max-w-4xl mx-auto">
-          <Card className="border-0 bg-linear-to-br from-purple-600 via-pink-600 to-purple-700 text-white shadow-2xl overflow-hidden relative">
+          <Card className="border-0 bg-linear-to-br from-blue-600 via-orange-600 to-blue-700 text-white shadow-2xl overflow-hidden relative">
             <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
             <CardContent className="p-12 sm:p-16 text-center relative z-10">
               <Sparkles className="h-12 w-12 mx-auto mb-6 animate-pulse" />
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
                 Know Your Gap. Close Your Gap.
               </h2>
-              <p className="text-purple-100 text-lg mb-8 max-w-2xl mx-auto">
+              <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
                 Stop guessing if you're job-ready. Let CareerCraft analyze your
                 gap and create your personalized roadmap. Start your free
                 analysis today and take control of your career.
@@ -286,7 +285,7 @@ export default function Home() {
                 <Link href="/signup">
                   <Button
                     size="lg"
-                    className="bg-white text-purple-600 hover:bg-slate-100 shadow-xl text-lg h-12"
+                    className="bg-white text-blue-600 hover:bg-slate-100 shadow-xl text-lg h-12"
                   >
                     Get Started Free <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
@@ -302,7 +301,7 @@ export default function Home() {
                 </Link>
               </div>
 
-              <div className="mt-8 flex items-center justify-center gap-6 text-sm text-purple-100">
+              <div className="mt-8 flex items-center justify-center gap-6 text-sm text-blue-100">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4" />
                   <span>No credit card required</span>
@@ -323,10 +322,10 @@ export default function Home() {
         <div className="max-w-6xl mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Target
-              className="h-6 w-6 text-purple-600 dark:text-purple-400"
+              className="h-6 w-6 text-blue-600 dark:text-blue-400"
               fill="currentColor"
             />
-            <span className="text-xl font-bold bg-linear-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-linear-to-r from-blue-600 to-orange-600 dark:from-blue-400 dark:to-orange-400 bg-clip-text text-transparent">
               CareerCraft
             </span>
           </div>
@@ -350,14 +349,14 @@ function FeatureCard({ icon, badge, title, description, features }: {
   features: string[]
 }) {
   return (
-    <Card className="border-purple-100 dark:border-purple-900/50 hover:border-purple-300 dark:hover:border-purple-700 transition-all hover:shadow-xl group bg-white/50 dark:bg-slate-900/50 backdrop-blur">
+    <Card className="border-blue-100 dark:border-blue-900/50 hover:border-blue-300 dark:hover:border-blue-700 transition-all hover:shadow-xl group bg-white/50 dark:bg-slate-900/50 backdrop-blur">
       <CardHeader>
         <div className="flex items-start justify-between mb-4">
-          <div className="p-3 rounded-xl bg-linear-to-br from-purple-500 to-pink-500 text-white shadow-lg group-hover:scale-110 transition-transform">
+          <div className="p-3 rounded-xl bg-linear-to-br from-blue-500 to-orange-500 text-white shadow-lg group-hover:scale-110 transition-transform">
             {icon}
           </div>
           {badge && (
-            <Badge className="bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800">
+            <Badge className="bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800">
               {badge}
             </Badge>
           )}
@@ -369,7 +368,7 @@ function FeatureCard({ icon, badge, title, description, features }: {
         <ul className="space-y-2">
           {features.map((feature, idx) => (
             <li key={idx} className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-              <CheckCircle2 className="h-4 w-4 text-purple-600 dark:text-purple-400 shrink-0" />
+              <CheckCircle2 className="h-4 w-4 text-blue-600 dark:text-blue-400 shrink-0" />
               <span>{feature}</span>
             </li>
           ))}
@@ -378,3 +377,4 @@ function FeatureCard({ icon, badge, title, description, features }: {
     </Card>
   )
 }
+

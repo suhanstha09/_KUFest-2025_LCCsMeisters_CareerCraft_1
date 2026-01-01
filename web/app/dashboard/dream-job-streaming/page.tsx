@@ -34,8 +34,8 @@ function StatusStep({ icon, text, status }: { icon: React.ReactNode; text: strin
     switch (status) {
       case 'active':
         return {
-          container: 'bg-purple-50 dark:bg-purple-900/30 border-purple-200 dark:border-purple-700',
-          icon: 'bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-400',
+          container: 'bg-blue-50 dark:bg-blue-900/30 border-blue-200 dark:border-blue-700',
+          icon: 'bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400',
           text: 'text-slate-900 dark:text-white font-medium',
         };
       case 'complete':
@@ -63,9 +63,9 @@ function StatusStep({ icon, text, status }: { icon: React.ReactNode; text: strin
       <span className={`text-sm ${styles.text}`}>{text}</span>
       {status === 'active' && (
         <div className="ml-auto flex gap-1">
-          <div className="w-1.5 h-1.5 bg-purple-600 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-          <div className="w-1.5 h-1.5 bg-purple-600 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-          <div className="w-1.5 h-1.5 bg-purple-600 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+          <div className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+          <div className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+          <div className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
         </div>
       )}
     </div>
@@ -207,7 +207,7 @@ export default function DreamJobStreamingPage() {
       <div className="max-w-6xl mx-auto">
         {/* Title Section */}
         <div className="mb-8">
-          {/* <Badge className="mb-4 bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800">
+          {/* <Badge className="mb-4 bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800">
             <Target className="h-3 w-3 mr-1" />
             Step 2: Define Your Dream Job (Streaming)
           </Badge> */}
@@ -225,16 +225,16 @@ export default function DreamJobStreamingPage() {
           // Analyzing & Results View
           <div className="space-y-6">
             {/* Progress Card */}
-            <Card className="border-purple-100 dark:border-purple-900/50">
+            <Card className="border-blue-100 dark:border-blue-900/50">
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <CardTitle className="flex items-center gap-2">
-                    <Sparkles className="h-5 w-5 text-purple-600" />
+                    <Sparkles className="h-5 w-5 text-blue-600" />
                     {state.progress === 100
                       ? "Analysis Complete!"
                       : "Analyzing Your Fit"}
                   </CardTitle>
-                  <Badge className="bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">
+                  <Badge className="bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">
                     {state.progress}%
                   </Badge>
                 </div>
@@ -247,7 +247,7 @@ export default function DreamJobStreamingPage() {
                 <div className="mb-6">
                   <div className="h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 transition-all duration-500 ease-out"
+                      className="h-full bg-gradient-to-r from-blue-600 via-orange-600 to-blue-600 transition-all duration-500 ease-out"
                       style={{ width: `${state.progress}%` }}
                     ></div>
                   </div>
@@ -281,10 +281,10 @@ export default function DreamJobStreamingPage() {
 
             {/* Live Metrics */}
             {Object.keys(state.metrics).length > 0 && (
-              <Card className="border-purple-100 dark:border-purple-900/50">
+              <Card className="border-blue-100 dark:border-blue-900/50">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <TrendingUp className="h-5 w-5 text-purple-600" />
+                    <TrendingUp className="h-5 w-5 text-blue-600" />
                     Live Match Metrics
                   </CardTitle>
                   <CardDescription>
@@ -359,7 +359,7 @@ export default function DreamJobStreamingPage() {
                 onClick={() => handleMethodChange("describe")}
                 className={`flex-1 p-4 rounded-lg border-2 transition-all ${
                   method === "describe"
-                    ? "border-purple-600 bg-purple-50 dark:bg-purple-950/30"
+                    ? "border-blue-600 bg-blue-50 dark:bg-blue-950/30"
                     : "border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700"
                 }`}
               >
@@ -380,7 +380,7 @@ export default function DreamJobStreamingPage() {
                 onClick={() => handleMethodChange("paste")}
                 className={`flex-1 p-4 rounded-lg border-2 transition-all ${
                   method === "paste"
-                    ? "border-purple-600 bg-purple-50 dark:bg-purple-950/30"
+                    ? "border-blue-600 bg-blue-50 dark:bg-blue-950/30"
                     : "border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700"
                 }`}
               >
@@ -401,7 +401,7 @@ export default function DreamJobStreamingPage() {
             {/* Form content - reuse from original page */}
             {method === "describe" ? (
               followUpStep === "initial" ? (
-                <Card className="border-purple-100 dark:border-purple-900/50">
+                <Card className="border-blue-100 dark:border-blue-900/50">
                   <CardHeader>
                     <CardTitle>Your Ideal Role</CardTitle>
                     <CardDescription>
@@ -413,12 +413,12 @@ export default function DreamJobStreamingPage() {
                       value={roleDescription}
                       onChange={(e) => setRoleDescription(e.target.value)}
                       placeholder="I want to be a Product Manager at a tech startup..."
-                      className="w-full p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none min-h-32"
+                      className="w-full p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none min-h-32"
                     />
                     <Button
                       onClick={handleDescribeSubmit}
                       disabled={!roleDescription.trim()}
-                      className="w-full bg-purple-600 hover:bg-purple-700"
+                      className="w-full bg-blue-600 hover:bg-blue-700"
                     >
                       Continue <Sparkles className="ml-2 h-4 w-4" />
                     </Button>
@@ -426,7 +426,7 @@ export default function DreamJobStreamingPage() {
                 </Card>
               ) : (
                 <div className="space-y-6">
-                  <Card className="border-purple-100 dark:border-purple-900/50">
+                  <Card className="border-blue-100 dark:border-blue-900/50">
                     <CardHeader>
                       <CardTitle>Let's refine your search</CardTitle>
                       <CardDescription>
@@ -447,7 +447,7 @@ export default function DreamJobStreamingPage() {
                               onClick={() => setSelectedIndustry(industry)}
                               className={`p-3 rounded-lg border-2 transition-all text-sm font-medium ${
                                 selectedIndustry === industry
-                                  ? "border-purple-600 bg-purple-50 dark:bg-purple-950/30 text-purple-700 dark:text-purple-300"
+                                  ? "border-blue-600 bg-blue-50 dark:bg-blue-950/30 text-blue-700 dark:text-blue-300"
                                   : "border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-600"
                               }`}
                             >
@@ -468,7 +468,7 @@ export default function DreamJobStreamingPage() {
                               onClick={() => setSelectedLevel(level)}
                               className={`w-full p-3 rounded-lg border-2 transition-all text-left font-medium ${
                                 selectedLevel === level
-                                  ? "border-purple-600 bg-purple-50 dark:bg-purple-950/30 text-purple-700 dark:text-purple-300"
+                                  ? "border-blue-600 bg-blue-50 dark:bg-blue-950/30 text-blue-700 dark:text-blue-300"
                                   : "border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-600"
                               }`}
                             >
@@ -487,7 +487,7 @@ export default function DreamJobStreamingPage() {
                           value={companies}
                           onChange={(e) => setCompanies(e.target.value)}
                           placeholder="e.g., Google, Microsoft, Startups..."
-                          className="w-full p-3 rounded-lg border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:border-purple-500 transition-all"
+                          className="w-full p-3 rounded-lg border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:border-blue-500 transition-all"
                         />
                       </div>
 
@@ -502,7 +502,7 @@ export default function DreamJobStreamingPage() {
                               onClick={() => handleProductTypeToggle(type)}
                               className={`p-3 rounded-lg border-2 transition-all text-sm font-medium ${
                                 productTypes.includes(type)
-                                  ? "border-purple-600 bg-purple-50 dark:bg-purple-950/30 text-purple-700 dark:text-purple-300"
+                                  ? "border-blue-600 bg-blue-50 dark:bg-blue-950/30 text-blue-700 dark:text-blue-300"
                                   : "border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-600"
                               }`}
                             >
@@ -518,7 +518,7 @@ export default function DreamJobStreamingPage() {
                     onClick={handleAnalyze}
                     disabled={!isDescribeMethodComplete}
                     size="lg"
-                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg h-12"
+                    className="w-full bg-gradient-to-r from-blue-600 to-orange-600 hover:from-blue-700 hover:to-orange-700 text-white shadow-lg h-12"
                   >
                     <Sparkles className="h-5 w-5 mr-2" />
                     Start Streaming Analysis
@@ -527,7 +527,7 @@ export default function DreamJobStreamingPage() {
               )
             ) : (
               <div className="space-y-6">
-                <Card className="border-purple-100 dark:border-purple-900/50">
+                <Card className="border-blue-100 dark:border-blue-900/50">
                   <CardHeader>
                     <CardTitle>Paste Job Description</CardTitle>
                     <CardDescription>
@@ -556,7 +556,7 @@ export default function DreamJobStreamingPage() {
                         value={additionalContext}
                         onChange={(e) => setAdditionalContext(e.target.value)}
                         placeholder="Add any preferences or context (e.g., remote work preference, salary expectations, specific skills you want to highlight...)"
-                        className="w-full p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none min-h-32"
+                        className="w-full p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none min-h-32"
                       />
                       <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">
                         This helps us better understand your preferences and
@@ -570,7 +570,7 @@ export default function DreamJobStreamingPage() {
                   onClick={handleAnalyze}
                   disabled={!isPasteMethodComplete}
                   size="lg"
-                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg h-12"
+                  className="w-full bg-gradient-to-r from-blue-600 to-orange-600 hover:from-blue-700 hover:to-orange-700 text-white shadow-lg h-12"
                 >
                   <Sparkles className="h-5 w-5 mr-2" />
                   Start Streaming Analysis
@@ -583,3 +583,4 @@ export default function DreamJobStreamingPage() {
     </div>
   )
 }
+

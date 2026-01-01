@@ -66,24 +66,24 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
       {/* Navigation */}
       <nav className="flex items-center justify-between px-6 py-4 sm:px-12 bg-white/5 dark:bg-slate-900/50 backdrop-blur-sm border-b border-white/10">
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo.png" alt="CareerCraft Logo" width={32} height={32} className="h-8 w-8" />
+          <Image src="/logo.png" alt="CareerCraft Logo" width={102} height={102} />
           {/* <span className="text-2xl font-bold text-white">CareerCraft </span> */}
         </Link>
         <div className="flex gap-4 items-center">
           <ModeToggle />
           <Link href="/signup">
-            <Button className="bg-purple-600 hover:bg-purple-700">Sign Up</Button>
+            <Button className="bg-blue-600 hover:bg-blue-700">Sign Up</Button>
           </Link>
         </div>
       </nav>
 
       <div className="flex items-center justify-center py-12 px-4 sm:px-6">
         <div className="w-full max-w-md">
-          <div className="bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-purple-500/20 p-8 sm:p-10 shadow-lg dark:shadow-none">
+          <div className="bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-blue-500/20 p-8 sm:p-10 shadow-lg dark:shadow-none">
             <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Welcome Back</h1>
             <p className="text-slate-600 dark:text-slate-400 mb-8">
               Sign in to continue your journey
@@ -125,7 +125,7 @@ export default function Login() {
                     value={formData.email}
                     onChange={handleChange}
                     disabled={isPending}
-                    className="w-full pl-10 pr-4 py-2 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:border-purple-500 focus:outline-none transition disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full pl-10 pr-4 py-2 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none transition disabled:opacity-50 disabled:cursor-not-allowed"
                     required
                   />
                 </div>
@@ -146,7 +146,7 @@ export default function Login() {
                     value={formData.password}
                     onChange={handleChange}
                     disabled={isPending}
-                    className="w-full pl-10 pr-12 py-2 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:border-purple-500 focus:outline-none transition disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full pl-10 pr-12 py-2 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none transition disabled:opacity-50 disabled:cursor-not-allowed"
                     required
                   />
                   <button
@@ -168,7 +168,7 @@ export default function Login() {
                   />
                   <span className="text-slate-600 dark:text-slate-400">Remember me</span>
                 </label>
-                <a href="#" className="text-sm text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300">
+                <a href="#" className="text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
                   Forgot password?
                 </a>
               </div>
@@ -177,7 +177,7 @@ export default function Login() {
               <Button
                 type="submit"
                 disabled={isPending}
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg font-medium transition mt-6 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-medium transition mt-6 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isPending ? (
                   <>
@@ -195,7 +195,7 @@ export default function Login() {
             {/* Sign Up Link */}
             <p className="text-center text-slate-600 dark:text-slate-400 mt-6">
               Don't have an account?{' '}
-              <Link href="/signup" className="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium">
+              <Link href="/signup" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium">
                 Sign up here
               </Link>
             </p>

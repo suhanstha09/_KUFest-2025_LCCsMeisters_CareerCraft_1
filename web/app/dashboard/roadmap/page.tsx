@@ -133,7 +133,7 @@ export default function RoadmapPage() {
           <div className="flex items-center gap-3">
             <div className="flex-1">
               <div className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-purple-500 to-pink-500"
+                <div className="h-full bg-gradient-to-r from-blue-500 to-orange-500"
                   style={{ width: '50%' }} />
               </div>
             </div>
@@ -158,7 +158,7 @@ export default function RoadmapPage() {
                   onClick={() => setSelectedWeek(week.week)}
                   className={`w-full text-left px-4 py-3 rounded-lg transition flex items-center justify-between ${
                     selectedWeek === week.week
-                      ? 'bg-purple-600 text-white'
+                      ? 'bg-blue-600 text-white'
                       : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
                   }`}
                 >
@@ -178,10 +178,10 @@ export default function RoadmapPage() {
         {/* Main Content */}
         <div className="lg:col-span-2 space-y-6">
           {/* Week Header */}
-          <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/50 dark:to-pink-900/50 rounded-lg border border-purple-200 dark:border-purple-500/20 p-8 transition-colors">
+          <div className="bg-gradient-to-r from-blue-50 to-orange-50 dark:from-blue-900/50 dark:to-orange-900/50 rounded-lg border border-blue-200 dark:border-blue-500/20 p-8 transition-colors">
             <div className="flex items-start justify-between mb-4">
               <div>
-                <p className="text-purple-700 dark:text-purple-300 text-sm font-medium mb-2">
+                <p className="text-blue-700 dark:text-blue-300 text-sm font-medium mb-2">
                   Week {currentWeek.week} of 12
                 </p>
                 <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-3">
@@ -194,11 +194,11 @@ export default function RoadmapPage() {
               {currentWeek.completed ? (
                 <CheckCircle className="h-8 w-8 text-green-600 dark:text-green-400 flex-shrink-0" />
               ) : (
-                <Target className="h-8 w-8 text-purple-600 dark:text-purple-400 flex-shrink-0" />
+                <Target className="h-8 w-8 text-blue-600 dark:text-blue-400 flex-shrink-0" />
               )}
             </div>
             {!currentWeek.completed && (
-              <Button className="bg-purple-600 hover:bg-purple-700 text-white">
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Play className="h-4 w-4 mr-2" />
                 Start This Week
               </Button>
@@ -208,7 +208,7 @@ export default function RoadmapPage() {
           {/* Topics */}
           <div className="bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800 p-6 transition-colors">
             <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-              <BookOpen className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+              <BookOpen className="h-5 w-5 text-blue-600 dark:text-blue-400" />
               Topics to Master
             </h3>
             <div className="grid sm:grid-cols-2 gap-3">
@@ -230,7 +230,7 @@ export default function RoadmapPage() {
               {currentWeek.resources.map((resource, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start gap-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-purple-500/50 transition cursor-pointer"
+                  className="flex items-start gap-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-blue-500/50 transition cursor-pointer"
                 >
                   <div className="flex-shrink-0 pt-1">
                     {resource.type === 'course' && (
@@ -270,7 +270,7 @@ export default function RoadmapPage() {
                 GitHub and add it to your portfolio.
               </p>
               {!currentWeek.completed && (
-                <Button variant="outline" className="border-purple-600 dark:border-purple-500 text-purple-600 dark:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20">
+                <Button variant="outline" className="border-blue-600 dark:border-blue-500 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20">
                   View Project Details
                 </Button>
               )}
@@ -294,3 +294,4 @@ export default function RoadmapPage() {
     </div>
   );
 }
+

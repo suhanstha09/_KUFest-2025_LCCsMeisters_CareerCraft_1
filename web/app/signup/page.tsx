@@ -66,7 +66,7 @@ export default function SignUp() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
       {/* Navigation */}
       <nav className="flex items-center justify-between px-6 py-4 sm:px-12 bg-white/5 dark:bg-slate-900/50 backdrop-blur-sm border-b border-white/10">
         <Link href="/" className="flex items-center gap-2">
@@ -80,7 +80,7 @@ export default function SignUp() {
         <div className="flex gap-4 items-center">
           <ModeToggle />
           <Link href="/login">
-            <Button variant="ghost" className="text-white hover:bg-purple-800">
+            <Button variant="ghost" className="text-white hover:bg-blue-800">
               Login
             </Button>
           </Link>
@@ -89,7 +89,7 @@ export default function SignUp() {
 
       <div className="flex items-center justify-center py-12 px-4 sm:px-6">
         <div className="w-full max-w-md">
-          <div className="bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-purple-500/20 p-8 sm:p-10 shadow-lg dark:shadow-none">
+          <div className="bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-blue-500/20 p-8 sm:p-10 shadow-lg dark:shadow-none">
             <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Create Account</h1>
             <p className="text-slate-600 dark:text-slate-400 mb-8">
               Start your skill-building journey today
@@ -121,7 +121,7 @@ export default function SignUp() {
                     value={formData.name}
                     onChange={handleChange}
                     disabled={isPending}
-                    className="w-full pl-10 pr-4 py-2 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:border-purple-500 focus:outline-none transition disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full pl-10 pr-4 py-2 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none transition disabled:opacity-50 disabled:cursor-not-allowed"
                     required
                   />
                 </div>
@@ -142,7 +142,7 @@ export default function SignUp() {
                     value={formData.email}
                     onChange={handleChange}
                     disabled={isPending}
-                    className="w-full pl-10 pr-4 py-2 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:border-purple-500 focus:outline-none transition disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full pl-10 pr-4 py-2 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none transition disabled:opacity-50 disabled:cursor-not-allowed"
                     required
                   />
                 </div>
@@ -163,7 +163,7 @@ export default function SignUp() {
                     value={formData.password}
                     onChange={handleChange}
                     disabled={isPending}
-                    className="w-full pl-10 pr-12 py-2 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:border-purple-500 focus:outline-none transition disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full pl-10 pr-12 py-2 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none transition disabled:opacity-50 disabled:cursor-not-allowed"
                     required
                   />
                   <button
@@ -191,7 +191,7 @@ export default function SignUp() {
                     value={formData.confirmPassword}
                     onChange={handleChange}
                     disabled={isPending}
-                    className="w-full pl-10 pr-12 py-2 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:border-purple-500 focus:outline-none transition disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full pl-10 pr-12 py-2 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:border-blue-500 focus:outline-none transition disabled:opacity-50 disabled:cursor-not-allowed"
                     required
                   />
                   <button
@@ -214,11 +214,11 @@ export default function SignUp() {
                 />
                 <label htmlFor="terms" className="text-sm text-slate-600 dark:text-slate-400">
                   I agree to the{' '}
-                  <a href="#" className="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300">
+                  <a href="#" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
                     Terms of Service
                   </a>{' '}
                   and{' '}
-                  <a href="#" className="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300">
+                  <a href="#" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
                     Privacy Policy
                   </a>
                 </label>
@@ -228,7 +228,7 @@ export default function SignUp() {
               <Button
                 type="submit"
                 disabled={isPending}
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg font-medium transition mt-6 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-medium transition mt-6 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isPending ? (
                   <>
@@ -246,7 +246,7 @@ export default function SignUp() {
             {/* Login Link */}
             <p className="text-center text-slate-600 dark:text-slate-400 mt-6">
               Already have an account?{' '}
-              <Link href="/login" className="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium">
+              <Link href="/login" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium">
                 Login here
               </Link>
             </p>

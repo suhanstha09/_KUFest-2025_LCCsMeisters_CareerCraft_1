@@ -43,7 +43,7 @@ export function AnalysisResults({ analysis, parsedJob, onAskQuestion }: Analysis
   return (
     <div className="space-y-6">
       {/* Overall Summary */}
-      <Card className="border-purple-100 dark:border-purple-900/50">
+      <Card className="border-blue-100 dark:border-blue-900/50">
         <CardHeader>
           <div className="flex items-start justify-between">
             <div>
@@ -60,7 +60,7 @@ export function AnalysisResults({ analysis, parsedJob, onAskQuestion }: Analysis
         <CardContent>
           <div className="flex items-center gap-6">
             <div className="text-center">
-              <div className="text-4xl font-bold text-purple-600 dark:text-purple-400">
+              <div className="text-4xl font-bold text-blue-600 dark:text-blue-400">
                 {analysis.match_score}%
               </div>
               <div className="text-sm text-slate-600 dark:text-slate-400 mt-1">Overall Match</div>
@@ -175,9 +175,9 @@ export function AnalysisResults({ analysis, parsedJob, onAskQuestion }: Analysis
 
       {/* Next Steps */}
       {analysis.next_steps && analysis.next_steps.length > 0 && (
-        <Card className="border-purple-100 dark:border-purple-900/50">
+        <Card className="border-blue-100 dark:border-blue-900/50">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-purple-700 dark:text-purple-300">
+            <CardTitle className="flex items-center gap-2 text-blue-700 dark:text-blue-300">
               <TrendingUp className="h-5 w-5" />
               Recommended Next Steps
             </CardTitle>
@@ -186,7 +186,7 @@ export function AnalysisResults({ analysis, parsedJob, onAskQuestion }: Analysis
             <ol className="space-y-3">
               {analysis.next_steps.map((step: string, index: number) => (
                 <li key={index} className="flex items-start gap-3">
-                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 text-sm font-bold shrink-0">
+                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 text-sm font-bold shrink-0">
                     {index + 1}
                   </span>
                   <span className="text-slate-700 dark:text-slate-300 flex-1">{step}</span>
@@ -261,10 +261,10 @@ export function AnalysisResults({ analysis, parsedJob, onAskQuestion }: Analysis
       )}
 
       {/* Interactive Chat Section */}
-      <Card className="border-purple-100 dark:border-purple-900/50">
+      <Card className="border-blue-100 dark:border-blue-900/50">
         <CardHeader>
           <div className="flex items-center gap-2">
-            <MessageSquare className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+            <MessageSquare className="h-5 w-5 text-blue-600 dark:text-blue-400" />
             <CardTitle>Discuss Your Analysis with AI</CardTitle>
           </div>
           <CardDescription>
@@ -276,7 +276,7 @@ export function AnalysisResults({ analysis, parsedJob, onAskQuestion }: Analysis
             <Button
               onClick={onAskQuestion}
               size="lg"
-              className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+              className="w-full bg-gradient-to-r from-blue-600 to-orange-600 hover:from-blue-700 hover:to-orange-700"
             >
               <Sparkles className="h-5 w-5 mr-2" />
               Start Conversation
@@ -287,3 +287,4 @@ export function AnalysisResults({ analysis, parsedJob, onAskQuestion }: Analysis
     </div>
   );
 }
+

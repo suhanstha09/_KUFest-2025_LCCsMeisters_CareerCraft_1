@@ -52,8 +52,8 @@ export function ProfileMenu({ userName = 'John Doe', userEmail = 'john@example.c
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="flex items-center gap-3 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg transition-colors hover:bg-slate-200 dark:hover:bg-slate-700 outline-none focus-visible:ring-2 focus-visible:ring-purple-500 dark:focus-visible:ring-purple-400">
-          <div className="h-8 w-8 rounded-full bg-linear-to-br from-purple-400 to-pink-600 flex items-center justify-center text-white text-sm font-semibold">
+        <button className="flex items-center gap-3 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg transition-colors hover:bg-slate-200 dark:hover:bg-slate-700 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-blue-400">
+          <div className="h-8 w-8 rounded-full bg-linear-to-br from-blue-400 to-orange-600 flex items-center justify-center text-white text-sm font-semibold">
             {userName.charAt(0).toUpperCase()}
           </div>
           <div className="hidden sm:block text-left">

@@ -151,7 +151,7 @@ export function ProjectsSection() {
         {!isAdding && (
           <Button
             onClick={handleAdd}
-            className="bg-purple-600 hover:bg-purple-700 text-white"
+            className="bg-blue-600 hover:bg-blue-700 text-white"
           >
             <Plus className="mr-2 h-4 w-4" />
             Add Project
@@ -185,7 +185,7 @@ export function ProjectsSection() {
                   id="projectType"
                   value={formData.projectType}
                   onChange={(e) => handleChange('projectType', e.target.value)}
-                  className="flex h-10 w-full rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-2 text-sm ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 dark:focus-visible:ring-purple-400 focus-visible:ring-offset-2 text-slate-900 dark:text-slate-50"
+                  className="flex h-10 w-full rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-2 text-sm ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-blue-400 focus-visible:ring-offset-2 text-slate-900 dark:text-slate-50"
                 >
                   {projectTypes.map(type => (
                     <option key={type.value} value={type.value}>
@@ -266,7 +266,7 @@ export function ProjectsSection() {
                   id="isOngoing"
                   checked={formData.isOngoing}
                   onChange={(e) => handleChange('isOngoing', e.target.checked)}
-                  className="h-4 w-4 rounded border-slate-300 text-purple-600 focus:ring-purple-500"
+                  className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
                 />
                 <Label htmlFor="isOngoing" className="cursor-pointer">
                   Ongoing project
@@ -289,7 +289,7 @@ export function ProjectsSection() {
               <Button
                 onClick={handleSave}
                 disabled={createMutation.isPending || updateMutation.isPending}
-                className="bg-purple-600 hover:bg-purple-700 text-white"
+                className="bg-blue-600 hover:bg-blue-700 text-white"
               >
                 {createMutation.isPending || updateMutation.isPending ? (
                   <>
@@ -320,7 +320,7 @@ export function ProjectsSection() {
       {/* Loading State */}
       {isLoading && (
         <Card className="p-12 bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-center">
-          <Loader2 className="h-8 w-8 animate-spin mx-auto text-purple-600 dark:text-purple-400" />
+          <Loader2 className="h-8 w-8 animate-spin mx-auto text-blue-600 dark:text-blue-400" />
           <p className="text-slate-500 dark:text-slate-400 mt-4">Loading projects...</p>
         </Card>
       )}
@@ -349,7 +349,7 @@ export function ProjectsSection() {
                     <h4 className="text-lg font-semibold text-slate-900 dark:text-white">
                       {project.title}
                     </h4>
-                    <span className="text-sm px-2 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded inline-block mt-2">
+                    <span className="text-sm px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded inline-block mt-2">
                       {projectTypes.find(t => t.value === project.projectType)?.label}
                     </span>
                   </div>
@@ -394,7 +394,7 @@ export function ProjectsSection() {
                       href={project.projectUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1"
+                      className="text-sm text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1"
                     >
                       <ExternalLink className="h-4 w-4" />
                       Project Link
@@ -405,7 +405,7 @@ export function ProjectsSection() {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1"
+                      className="text-sm text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1"
                     >
                       <Github className="h-4 w-4" />
                       GitHub
@@ -416,7 +416,7 @@ export function ProjectsSection() {
                       href={project.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1"
+                      className="text-sm text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1"
                     >
                       <ExternalLink className="h-4 w-4" />
                       Live Demo
@@ -459,3 +459,4 @@ export function ProjectsSection() {
     </div>
   );
 }
+
